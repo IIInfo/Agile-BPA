@@ -1,0 +1,130 @@
+<!--
+
+Build file for Agile-BPA component.
+
+-->
+<!-- define properties for Agile-BPA component -->
+<project name="Agile-BPA" default="agile-bpa.war" basedir=".">
+	
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	  <classpath>
+	    <pathelement location="../environment/antlib/ant-contrib.jar"/>
+	  </classpath>
+	</taskdef>
+	
+    	
+	<property environment="env"/>
+
+	<!--set the global properties for this build-->
+	<property name="agile-bpa.web.src.dir" location="src" />
+	<property name="agile-bpa.war.dir" location="deploy" />
+	<property name="agile-bpa-web-inf.dir" location="WebContent/WEB-INF" />
+	<property name="agile-bpa-web.build.dir" location="WebContent/WEB-INF/classes" />
+	<property name="agile-bpa-web-lib.dir" location="WebContent/WEB-INF/lib" />
+	<property name="agile-bpa-web-jsp.dir" location="WebContent/WEB-INF/jsp" />
+	<property name="agile-bpa-web-context" location="WebContent"/>
+	
+	
+	
+	<!--set the global classpath for the build (Web Tier)-->
+	<path id="agile-bpa.web.compile.classpath" path="${classpath}">
+		<pathelement location="${agile-bpa-web.build.dir}" />
+		<pathelement location="${agile-bpa-web-inf.dir}" />
+		<path refid="weblogic.classpath"/>
+		<fileset dir="${ant.home}/lib">
+			<include name="ant.jar" />
+		</fileset>
+		
+		<fileset dir="${agile-bpa-web-lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${agile-bpa.lib.dir}" id="id">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${agile-bpa.jar.dir}">
+			<include name="agile-bpa.jar" />
+		</fileset>
+		
+		
+	</path>
+
+	<path id="master-classpath">
+		<path refid="agile-bpa.business.compile.classpath" />
+		<path refid="agile-bpa.web.compile.classpath"/>
+		<path refid="weblogic.classpath"/>
+	</path>
+
+	<target name="clean" description="-->Clean up all the files generated on a previous build">
+		<!--removes the agile-bpa web tier classes folder-->
+		<delete dir="${agile-bpa-web.build.dir}">
+		</delete>
+		<!--removes the deploy folder where agile-bpa.war is created-->
+		<delete dir="${agile-bpa.war.dir}">
+		</delete>
+	</target>
+	
+	<target name="agile-bpa-init" description="--> Initialises the agile-bpa Component ">
+		<!--Creating the necessary build directories-->
+		<mkdir dir="${agile-bpa-web.build.dir}" />
+		<mkdir dir="${agile-bpa-web.build.dir}/jsps" />
+		<mkdir dir="${agile-bpa.war.dir}" />		
+		<mkdir dir="${agile-bpa.war.dir}/war" />
+		<mkdir dir="${agile-bpa.war.dir}/WEB-INF" />		
+	</target>
+
+
+	<target name="agile-bpa-web.compile" depends="clean, agile-bpa-init" description="-->Compiles the Agile-BPA web component">
+
+		<!-- Compile the web source directory -->
+		<javac srcdir="${agile-bpa.web.src.dir}" destdir="${agile-bpa-web.build.dir}" debug="true">
+			<classpath refid="agile-bpa.web.compile.classpath" />
+		</javac>
+		<!--copy the ApplicationResources.properties to WEB-INF/classes/ directory.-->
+		<echo>Copying the ApplicationResources.properties to WEB-INF/classes!</echo>
+		<copy todir="${agile-bpa-web.build.dir}" overwrite="true">
+			<fileset dir="${agile-bpa.web.src.dir}">
+				<include name="ApplicationResources.properties" />
+			</fileset>
+		</copy>
+	
+		<echo>Copy the beans.xml to WEB-INF/classes </echo>
+		<copy todir="${agile-bpa-web.build.dir}" overwrite="true">
+			<fileset dir="${agile-bpa.web.src.dir}">
+				<include name="*.xml"/>
+			</fileset>
+		</copy>
+		<!-- Convert all the JSP files into java source files-->
+		
+	</target>
+	
+     <!-- Create a .war file for agile-bpa web component -->
+	<target name="agile-bpa.war" depends="agile-bpa-web.compile" description="-->Creates the WAR file for agile-bpa web component">
+		<war destfile="${agile-bpa.war.dir}/agile-bpa.war" webxml="${agile-bpa-web-inf.dir}/web.xml" >
+			<zipfileset dir="${agile-bpa-web-context}/graphics" prefix="graphics" />
+			<fileset dir="${agile-bpa-web-context}">
+				<include name="styles/*.css" />
+				<include name="javascript/*.js" />
+				<include name="WEB-INF/*.tld" />
+				<include name="WEB-INF/*.xml" />
+				<include name="WEB-INF/jsp/**/*.jsp" />
+				<include name="WEB-INF/flows/**/*.xml" />
+				<include name="html/*.html" />
+				<include name="*.jsp" />
+				<include name="*.html" />
+			</fileset>
+			<classes dir="${agile-bpa-web.build.dir}">
+				<include name="gov/fda/furls/agile-bpa/**/*.class" />
+				<include name="ApplicationResources.properties" />
+				<include name="*.xml"/>
+			</classes>
+			<lib dir="${agile-bpa-web-lib.dir}">
+				<include name="*.jar" />
+			</lib>
+		</war>
+		
+		<delete dir="${agile-bpa-web.build.dir}/jsps" />
+		<delete dir="${agile-bpa.war.dir}/war" />
+		<delete dir="${agile-bpa.war.dir}/WEB-INF" />
+		
+	</target>
+</project>
