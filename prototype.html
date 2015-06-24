@@ -29,13 +29,13 @@ only screen and (max-width: 760px),
 	table.product td:before { position: absolute; top:6px; left:6px; width:45%; padding-right:10px; white-space:nowrap; }
 	
 	/* Label the data */
-	table.product td:nth-of-type(1):before { content: "Product Description"; }
-	table.product td:nth-of-type(2):before { content: "Code Info"; }
-	table.product td:nth-of-type(3):before { content: "Classification"; }
-	table.product td:nth-of-type(4):before { content: "Reason for Recall"; }
-	table.product td:nth-of-type(5):before { content: "Recalling Firm"; }
-	table.product td:nth-of-type(6):before { content: "Distribution Pattern"; }
-	table.product td:nth-of-type(7):before { content: "Event Details"; }
+	table.product td:nth-of-type(1):before { content: "Product Description"; font-weight:bold; }
+	table.product td:nth-of-type(2):before { content: "Code Info"; font-weight:bold; }
+	table.product td:nth-of-type(3):before { content: "Classification"; font-weight:bold; }
+	table.product td:nth-of-type(4):before { content: "Reason for Recall"; font-weight:bold; }
+	table.product td:nth-of-type(5):before { content: "Recalling Firm"; font-weight:bold; }
+	table.product td:nth-of-type(6):before { content: "Distribution Pattern"; font-weight:bold; }
+	table.product td:nth-of-type(7):before { content: "Event Details"; font-weight:bold; }
 }
 </style>
 
@@ -47,7 +47,7 @@ only screen and (max-width: 760px),
     <div class="page-banner"><img src="assets/images/banner.jpg" class="img-responsive" alt="Banner" /></div>
 
 	<div class="page-content">
-	<h1>Food safety enforcement reports</h1>
+	<h1>Enforcement Reports - Recall Information for Food</h1>
   
 	<p>This is the openFDA API endpoint for all food product recalls monitored by the FDA. When an FDA-regulated product is either defective or potentially harmful, recalling that product - removing it from the market or correcting the problem - is the most effective means for protecting the public.</p>
     <p>Recalls are almost always voluntary, meaning a company discovers a problem and recalls a product on its own. Other times a company recalls a product after FDA raises converns. Only in rare cases will FDA request or order a recall. But in every case, FDA's role is to oversee a company's strategy, classify the recalled products according to the level of hazard involved, and assess the adequacy of the recall. Recall information is posted in the Enforcement Reports once the products are classified.</p>
@@ -63,6 +63,12 @@ only screen and (max-width: 760px),
         	<p><strong>Search Reported Date (max range 1 month)</strong></p>
         </div>
         <button type="submit" class="btn btn-default">Search</button>
+    </div>
+    
+    <div class="panel panel-warning">
+        <div class="panel-body">
+        	<span class="glyphicon glyphicon-exclamation-sign"></span> Results displayed are from <strong>05/24/15</strong> to <strong>06/24/15</strong>
+        </div>
     </div>
     
     <ul class="nav nav-pills">
@@ -91,7 +97,7 @@ only screen and (max-width: 760px),
 			<td>These products contain Kratom.</td>
 			<td>Nuevotanicals</td>
             <td>Alabama, Arizona, California, Florida, Illinois, Nevada, New York, Ohio, Oklahoma, Oregon, Texas, and Virginia.</td>
-            <td><a href="##">Details</a></td>
+            <td><a href="details.html" target="_blank">Details</a></td>
 		</tr>
         <tr>
 			<td scope="col">Kratom (Kr8om) Maeng Da Thai Pure Alkaloid Suspension Oil in 150 mg</td>
@@ -100,7 +106,7 @@ only screen and (max-width: 760px),
 			<td>These products contain Kratom.</td>
 			<td>Nuevotanicals</td>
             <td>Alabama, Arizona, California, Florida, Illinois, Nevada, New York, Ohio, Oklahoma, Oregon, Texas, and Virginia.</td>
-            <td><a href="##">Details</a></td>
+            <td><a href="details.html" target="_blank">Details</a></td>
 		</tr>
         <tr>
 			<td scope="col">Kratom (Kr8om) Maeng Da Thai Pure Alkaloid Suspension Oil in 150 mg</td>
@@ -109,7 +115,7 @@ only screen and (max-width: 760px),
 			<td>These products contain Kratom.</td>
 			<td>Nuevotanicals</td>
             <td>Alabama, Arizona, California, Florida, Illinois, Nevada, New York, Ohio, Oklahoma, Oregon, Texas, and Virginia.</td>
-            <td><a href="##">Details</a></td>
+            <td><a href="details.html" target="_blank">Details</a></td>
 		</tr>
         <tr>
 			<td scope="col">Kratom (Kr8om) Maeng Da Thai Pure Alkaloid Suspension Oil in 150 mg</td>
@@ -118,7 +124,7 @@ only screen and (max-width: 760px),
 			<td>These products contain Kratom.</td>
 			<td>Nuevotanicals</td>
             <td>Alabama, Arizona, California, Florida, Illinois, Nevada, New York, Ohio, Oklahoma, Oregon, Texas, and Virginia.</td>
-            <td><a href="##">Details</a></td>
+            <td><a href="details.html" target="_blank">Details</a></td>
 		</tr>
         <tr>
 			<td scope="col">Kratom (Kr8om) Maeng Da Thai Pure Alkaloid Suspension Oil in 150 mg</td>
@@ -127,7 +133,7 @@ only screen and (max-width: 760px),
 			<td>These products contain Kratom.</td>
 			<td>Nuevotanicals</td>
             <td>Alabama, Arizona, California, Florida, Illinois, Nevada, New York, Ohio, Oklahoma, Oregon, Texas, and Virginia.</td>
-            <td><a href="##">Details</a></td>
+            <td><a href="details.html" target="_blank">Details</a></td>
 		</tr>
         <tr>
         	<td colspan="7" class="small">Note: If you need help accessing information in different file formats, see <a href="http://www.fda.gov/AboutFDA/AboutThisWebsite/WebsitePolicies/ViewingFiles/default.htm" target="_blank">Instructions for Downloading Viewers and Players</a>.</td>
