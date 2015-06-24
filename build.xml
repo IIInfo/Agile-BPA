@@ -41,8 +41,6 @@
 		<fileset dir="${agile-bpa.jar.dir}">
 			<include name="agile-bpa.jar" />
 		</fileset>
-		
-		
 	</path>
 
 	<path id="master-classpath">
@@ -91,7 +89,6 @@
 			</fileset>
 		</copy>
 		<!-- Convert all the JSP files into java source files-->
-		
 	</target>
 	
      <!-- Create a .war file for agile-bpa web component -->
@@ -122,6 +119,5 @@
 		<delete dir="${agile-bpa-web.build.dir}/jsps" />
 		<delete dir="${agile-bpa.war.dir}/war" />
 		<delete dir="${agile-bpa.war.dir}/WEB-INF" />
-		
 	</target>
 </project>
