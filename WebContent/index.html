@@ -1,8 +1,106 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-<title>Agile-BPA Index Page</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open FDA Enforcement</title>
+<link rel="stylesheet" href="css/foundation.css" />
+<link rel="stylesheet" href="css/stylesheet.css" />
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" />
+<script type="text/javascript"  src="js/vendor/modernizr.js"></script>
+<script type="text/javascript"  src="js/vendor/jquery.js"></script>
+<script type="text/javascript"  src="js/vendor/jquery.js"></script>
+<script type="text/javascript"  src="js/foundation.min.js"></script>
+<!-- jQuery -->
+<!-- DataTables -->
+<script type="text/javascript" src="js/jquery-dataTables.js"></script>
+<script>
+  $(document).foundation();
+ </script>
+<script>
+	var openFdaEnforcementSite='https://api.fda.gov/food/enforcement.json';
+	var openFdaApiKey='?api_key=kb68BYbRY8GJX5g7DkFD9U6trS5l4sl0gGvHwjOB';
+	var openFdaSearchFoodEnforcements='&search=report_date:[20140101+TO+20150624]';
+	//var openFdaSearchIndications='&search=openfda.indications_and_usage:{search}';
+	var openFdaLimit='&limit=100';
+	
+	$(document).ready(function(){
+		retrieveResults() ;	
+	});
+	
+	function retrieveResults() {
+		
+		var fdaUrl=openFdaEnforcementSite + openFdaApiKey + openFdaLimit + openFdaSearchFoodEnforcements;
+		
+		//alert(fdaUrl);
+		
+		$.ajax( {
+			url: fdaUrl,
+			type:"GET",
+			dataType:"json"
+		} )
+		.done(function( data) {
+			console.log(data);
+			processResult(data);
+		} )
+		.fail(function( data) {
+			$("body").css("cursor", "default");
+			if( data.statusText == "Not Found")
+			{
+				alert("Search found no results");
+			}
+		} );
+	}
+
+	function processResult(data) {
+			var metaTotal = data.results.length;
+			var dataArray = new Array();
+			for( var ndx = 0; ndx < metaTotal; ndx++) {
+				var rowArray = new Array();
+				var recallNumber = "";
+				var reasonforRecall = "";
+				var status = "";
+				var thisRow = data.results[ndx];
+				//alert(thisRow.recall_number);
+				rowArray.push(thisRow.recall_number);
+	           	rowArray.push(thisRow.reason_for_recall);
+	           	rowArray.push(thisRow.status);
+	           	rowArray.push(thisRow.distribution_pattern);
+	           	rowArray.push(thisRow.product_quantity);
+				dataArray.push(rowArray);
+			}
+			// Generate the data table
+			$('#tblResults').DataTable( { 
+				data: dataArray,
+				columns: [
+					{ "title": 'Recall Number' },
+					{ "title": 'Reason for Recall' },
+					{ "title": 'Status' },
+					{ "title": 'Distribution Pattern' }
+				]
+			 } );
+		}
+
+</script>
+
 </head>
-<body>
-<h1>This is an index page for Agile-BPA.</h1>
+<body id="dt_example">
+	<div id="dynamic">
+		<table cellpadding="0" cellspacing="0" border="0" class="display"
+			id="tblResults">
+			<thead>
+				<tr>
+					<th width="10%">Recall Number</th>
+					<th width="10%">Reason for Recall</th>
+					<th width="10%">Status</th>
+					<th width="10%">Distribution Pattern</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
 </body>
 </html>
