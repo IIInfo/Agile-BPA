@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enforcement Reports</title>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/libs/bootstrap/bootstrap.min.js"></script>
+
+<style>
+/* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { display: block; }
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	table.frers thead tr { position:absolute; top:-9999px; left:-9999px; }
+	table.frers tr { border:1px solid #ccc; }
+	table.frers td { border:none; border-bottom:1px solid #eee; position:relative; padding-left:50%; }
+	table.frers td:before { position: absolute; top:6px; left:6px; width:45%; padding-right:10px; white-space:nowrap; }
+	
+	/* Label the data */
+	table.frers td:nth-of-type(1):before { content: "Recalling Firm"; }
+	table.frers td:nth-of-type(2):before { content: "Classification"; }
+	table.frers td:nth-of-type(3):before { content: "Status"; }
+	table.frers td:nth-of-type(4):before { content: "Distribution Pattern"; }
+	table.frers td:nth-of-type(5):before { content: "Event Details"; }
+}
+</style>
+
+</head>
+<body>
+
+<div id="page-wrap">
+    
+    <div class="page-banner"><img src="assets/images/banner.jpg" class="img-responsive" alt="Banner" /></div>
+
+	<h1>Food Recall Enforcement Reports Since 2004</h1>
+  
+	<p>This is the openFDA API endpoint for all food product recalls monitored by the FDA. When an FDA-regulated product is either defective or potentially harmful, recalling that product - removing it from the market or correcting the problem - is the most effective means for protecting the public.</p>
+    <p>Recalls are almost always voluntary, meaning a company discovers a problem and recalls a product on its own. Other times a company recalls a product after FDA raises converns. Only in rare cases will FDA request or order a recall. But in every case, FDA's role is to oversee a company's strategy, classify the recalled products according to the level of hazard involved, and assess the adequacy of the recall. Recall information is posted in the Enforcement Reports once the products are classified.
+    <p>Important note: The data prior to mid-2012 is incomplete and has not been validated with internal FDA data. The dataset, like all datasets at openFDA, is a work in progress.
+    
+    <div class="page-filter">Filters</div>
+    
+    <h2>Filtered List of Food Recall Enforcement Report</h2>
+	<table class="frers" summary="">
+		<thead>
+		<tr>
+			<th scope="row">Recalling Firm</th>
+			<th scope="row">Classification</th>
+			<th scope="row">Status</th>
+			<th scope="row">Distribution Pattern</th>
+			<th scope="row">Event Details</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td scope="col">Nuevotanicals</td>
+			<td>Class II</td>
+			<td>Ongoing</td>
+			<td>Alabama, Arizona, California, Florida, Illinois, Nevada, New York, Ohio, Oklahoma, Oregon, Texas, and Virginia.</td>
+			<td>Details</td>
+		</tr>
+        <tr>
+			<td scope="col">AYAA Popcorn Manufacturing Corp.</td>
+			<td>Class I</td>
+			<td>Ongoing</td>
+			<td>Product distributed to local Supermax Supermarket Stores.</td>
+			<td>Details</td>
+		</tr>
+        <tr>
+			<td scope="col">Becton Dickinson & Co.</td>
+			<td>Class II</td>
+			<td>Ongoing</td>
+			<td>The products were distributed in AK, AL, AR, AZ, CA, CO, CT, DC, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NJ, NV, NY, OH, OR, PA, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV, and WY.</td>
+			<td>Details</td>
+		</tr>
+        <tr>
+			<td scope="col">Ortho-Clinical Diagnostics</td>
+			<td>Class II</td>
+			<td>Ongoing</td>
+			<td>Worldwide Distribution-US (nationwide), Brazil, Chile, Mexico, Australia, Hong Kong, India, Taiwan, Belgium, Denmark, France, Ireland, Italy, Portugal, Romania, Spain, Sweden and the UK.</td>
+			<td>Details</td>
+		</tr>
+		</tbody>
+	</table>
+    
+    <h2>Details for Recall Number F-0283-2013</h2>
+    <div class="page-filter">Filters</div>
+	
+</div>
+		
+</body>
+</html>
