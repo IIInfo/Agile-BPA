@@ -1,8 +1,5 @@
-<!--
+<!-- Build file for Agile-BPA component. -->
 
-Build file for Agile-BPA component.
-
--->
 <!-- define properties for Agile-BPA component -->
 <project name="Agile-BPA" default="agile-bpa.war" basedir=".">
 	
