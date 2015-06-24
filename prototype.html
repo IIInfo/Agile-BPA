@@ -52,7 +52,18 @@ only screen and (max-width: 760px),
 	<p>This is the openFDA API endpoint for all food product recalls monitored by the FDA. When an FDA-regulated product is either defective or potentially harmful, recalling that product - removing it from the market or correcting the problem - is the most effective means for protecting the public.</p>
     <p>Recalls are almost always voluntary, meaning a company discovers a problem and recalls a product on its own. Other times a company recalls a product after FDA raises converns. Only in rare cases will FDA request or order a recall. But in every case, FDA's role is to oversee a company's strategy, classify the recalled products according to the level of hazard involved, and assess the adequacy of the recall. Recall information is posted in the Enforcement Reports once the products are classified.</p>
     
-    <div class="page-filter">Filters</div>
+    <div class="page-filter">
+    	<div class="page-filterKeywords">
+            <p><strong>Filter Results by Keyword(s):</strong></p>
+            <div class="input">
+                <input type="search" class="form-control" placeholder="<chicken> or <chicken Maryland>">
+            </div>
+        </div>
+        <div class="page-filterDate">
+        	<p><strong>Search Reported Date (max range 1 month)</strong></p>
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+    </div>
     
     <ul class="nav nav-pills">
         <li role="presentation" class="active"><a href="#">Product View</a></li>
