@@ -27,7 +27,6 @@
 	<path id="agile-bpa.web.compile.classpath" path="${classpath}">
 		<pathelement location="${agile-bpa-web.build.dir}" />
 		<pathelement location="${agile-bpa-web-inf.dir}" />
-		<path refid="weblogic.classpath"/>
 		<fileset dir="${ant.home}/lib">
 			<include name="ant.jar" />
 		</fileset>
@@ -35,18 +34,11 @@
 		<fileset dir="${agile-bpa-web-lib.dir}">
 			<include name="*.jar" />
 		</fileset>
-		<fileset dir="${agile-bpa.lib.dir}" id="id">
-			<include name="*.jar" />
-		</fileset>
-		<fileset dir="${agile-bpa.jar.dir}">
-			<include name="agile-bpa.jar" />
-		</fileset>
 	</path>
 
 	<path id="master-classpath">
 		<path refid="agile-bpa.business.compile.classpath" />
 		<path refid="agile-bpa.web.compile.classpath"/>
-		<path refid="weblogic.classpath"/>
 	</path>
 
 	<target name="clean" description="-->Clean up all the files generated on a previous build">
