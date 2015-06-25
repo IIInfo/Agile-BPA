@@ -105,9 +105,9 @@
 			<classes dir="${agile-bpa-web.build.dir}">
 				<include name="com/iiinfo/**/*.class" />
 			</classes>
-			<!-- <lib dir="${agile-bpa-web-lib.dir}">
+			<lib dir="${agile-bpa-web-lib.dir}">
 				<include name="*.jar" />
-			</lib> -->
+			</lib>
 		</war>
 		
 		<delete dir="${agile-bpa-web.build.dir}/jsps" />
