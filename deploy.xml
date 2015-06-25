@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tomcat-deploy" default="deploywar" basedir=".">
+	
+	<property name="project-name" value="agile-bpa" />
+	<property name="war-file-name" value="${project-name}.war" />
+
+	<property name="build-directory" value="deploy" />
+
+	
+	<path id="task.classpath">
+	    <!-- Include all elements that Tomcat exposes to applications -->
+	    <fileset dir="${catalina.home}/bin">
+	      <include name="*.jar"/>
+	    </fileset>
+	    <pathelement location="${catalina.home}/lib"/>
+	    <fileset dir="${catalina.home}/lib">
+	      <include name="*.jar"/>
+	    </fileset>
+	    <fileset dir="lib">
+	      <include name="*.jar"/>
+	    </fileset>
+	  </path>
+	
+	<taskdef resource="org/apache/catalina/ant/catalina.tasks" classpathref="task.classpath"/>
+			
+	<taskdef name="start" classname="org.apache.catalina.ant.StartTask" classpathref="task.classpath"/>
+	<taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpathref="task.classpath"/>
+	<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="task.classpath"/>
+	<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="task.classpath" />
+
+	<target name="stop" description="stop application in tomcat">
+		<stop url="${tomcat-manager-url}" username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}" path="/${project-name}" />
+	</target>
+
+	<target name="start" description="start application in tomcat">
+		<start url="${tomcat-manager-url}" username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}" path="/${project-name}" />
+	</target>
+	
+	<target name="undeploy" description="undeploy from tomcat">
+		<undeploy 
+			failonerror="no"
+			url="${tomcat-manager-url}"
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}"
+			path="/${project-name}"
+		/>
+	</target>
+	
+	<target name="deploy" description="deploy to tomcat">
+		<echo>deploying from client</echo>
+		<deploy 
+			url="${tomcat-manager-url}"
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}"
+			path="/${project-name}"
+			war="file:/apps/jenkins_home/jobs/Agile-BPA/workspace/deploy/${war-file-name}"
+		/>
+	</target>
+	
+	<!-- 
+	<target name="war" depends="">
+		<mkdir dir="${build-directory}" />
+		<delete file="${build-directory}/${war-file-name}" />
+		<war warfile="${build-directory}/${war-file-name}" webxml="${web-xml-file}">
+			<classes dir="${classes-directory}" />
+			<fileset dir="${web-directory}">
+				
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${builder}" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+			</manifest>
+		</war>
+	</target>
+	 -->
+
+	<target name="deploywar" depends="undeploy,deploy" />
+	
+</project>
