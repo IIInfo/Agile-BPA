@@ -5,7 +5,7 @@
 	
 	<taskdef resource="net/sf/antcontrib/antlib.xml">
 	  <classpath>
-	    <pathelement location="../environment/antlib/ant-contrib.jar"/>
+	    <pathelement location="lib/ant-contrib.jar"/>
 	  </classpath>
 	</taskdef>
 	
@@ -20,6 +20,7 @@
 	<property name="agile-bpa-web-lib.dir" location="WebContent/WEB-INF/lib" />
 	<property name="agile-bpa-web-jsp.dir" location="WebContent/WEB-INF/jsp" />
 	<property name="agile-bpa-web-context" location="WebContent"/>
+	<property name="agile-bpa.lib.dir" location="lib" />
 	
 	
 	
@@ -32,6 +33,9 @@
 		</fileset>
 		
 		<fileset dir="${agile-bpa-web-lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${agile-bpa.lib.dir}" id="id">
 			<include name="*.jar" />
 		</fileset>
 	</path>
@@ -86,22 +90,20 @@
      <!-- Create a .war file for agile-bpa web component -->
 	<target name="agile-bpa.war" depends="agile-bpa-web.compile" description="-->Creates the WAR file for agile-bpa web component">
 		<war destfile="${agile-bpa.war.dir}/agile-bpa.war" webxml="${agile-bpa-web-inf.dir}/web.xml" >
-			<zipfileset dir="${agile-bpa-web-context}/graphics" prefix="graphics" />
 			<fileset dir="${agile-bpa-web-context}">
-				<include name="styles/*.css" />
-				<include name="javascript/*.js" />
-				<include name="WEB-INF/*.tld" />
-				<include name="WEB-INF/*.xml" />
+				<include name="assets/js/*.*" />
+				<include name="assets/css/*.*" />
+				<include name="assets/fonts/*.*" />
+				<include name="assets/libs/bootstrap/css/*.*" />
+				<include name="assets/libs/bootstrap/fonts/*.*" />
+				<include name="assets/libs/js/*.*" />
 				<include name="WEB-INF/jsp/**/*.jsp" />
-				<include name="WEB-INF/flows/**/*.xml" />
 				<include name="html/*.html" />
 				<include name="*.jsp" />
 				<include name="*.html" />
 			</fileset>
 			<classes dir="${agile-bpa-web.build.dir}">
-				<include name="gov/fda/furls/agile-bpa/**/*.class" />
-				<include name="ApplicationResources.properties" />
-				<include name="*.xml"/>
+				<include name="com/iiinfo/**/*.class" />
 			</classes>
 			<lib dir="${agile-bpa-web-lib.dir}">
 				<include name="*.jar" />
