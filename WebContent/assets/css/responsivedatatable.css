@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* responsive data table; switched table to card view: */
+
+/* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table.responsiveTable, table.responsiveTable thead, table.responsiveTable tbody, table.responsiveTable th, table.responsiveTable td, table.responsiveTable tr { display: block; }
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	table.product thead tr { position:absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+	table.product tr { border:1px solid #ccc; }
+	table.product td { border:none; border-bottom:1px solid #eee; position:relative; padding-left:40%; }
+	table.product td:before { position: absolute; top:6px; left:6px; width:45%; padding-right:10px; white-space:nowrap; }
+	
+	/* Label the data */
+	table.product td:nth-of-type(1):before { content: "Product Description"; font-weight:bold; }
+	table.product td:nth-of-type(2):before { content: "Code Info"; font-weight:bold; }
+	table.product td:nth-of-type(3):before { content: "Classification"; font-weight:bold; }
+	table.product td:nth-of-type(4):before { content: "Reason for Recall"; font-weight:bold; }
+	table.product td:nth-of-type(5):before { content: "Recalling Firm"; font-weight:bold; }
+	table.product td:nth-of-type(6):before { content: "Distribution Pattern"; font-weight:bold; }
+	table.product td:nth-of-type(7):before { content: "Event Details"; font-weight:bold; }
+}

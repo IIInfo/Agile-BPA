@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+
+body { 
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
+  	color: #222;
+}
+
+/* typography*/
+
+h1 {
+	font-size: 30px;
+	font-weight: 600;
+	color: #555;
+}
+
+p {line-height:1.5;}
+
+label.bold, legend.legendBold {
+	font-weight: 600;
+	color: #555;
+	width:100%;
+	font-size:1em;
+}
+
+/*remove Bootstrap's styling from legends with class="legendBold" */
+legend.legendBold {
+	border-bottom:none;
+	
+}
+
+/*center text: */
+.txtCentered {
+	text-align:center;
+}
+
+/* images & glyphs */
+
+img.imgResponsive {
+	width:100%;
+	height:auto;
+}
+
+/*add whitespace to the right of the download icon:*/
+.fa-download {margin-right:6px; font-size:16px;}
+
+/*eye icon in table cell only: */
+table.product .fa-eye {
+	font-size:20px;
+}
+
+td.details {
+	text-align:center;
+	font-size:0.9em;
+}
+
+td.details .fa-eye {
+	display:block;
+}
+
+/* buttons */
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover, .nav-pills > li.active > a
+ {
+	 background-color:#60745F;
+ }
+ 
+/* tables */
+
+table.product tbody th {
+	font-weight:normal;
+}
