@@ -58,7 +58,7 @@ dd {
         text-align:right;
     }
     .carousel-caption {
-        font-size: 24px; /*was 20px*/
+        font-size: 20px;
         text-shadow: 2px 2px 3px #000;
     }
     td.details {
