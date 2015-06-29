@@ -24,21 +24,26 @@ public class FoodEnforcementServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String comingFrom = request.getParameter("comingFrom");
 		String fromDate = request.getParameter("fromDate");
 		String toDate = request.getParameter("toDate");
+		String reasonForRecall = request.getParameter("reasonForRecall");
+		String classification = request.getParameter("classification");
 		String recallNumber = request.getParameter("recallNumber");
 		String event = request.getParameter("event");
+		if(classification!=null && classification.equalsIgnoreCase("All")){
+			classification = null;
+		}
 		
 		if(recallNumber != null && comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement")){
 			response.sendRedirect("foodEnforcementProductDetail.jsp?recallNumber="+recallNumber+"");
 		}
-		else if(event != null ){
+		else if(event != null && event.equalsIgnoreCase("Home")){
 			response.sendRedirect("foodEnforcement.jsp");
 		}
-		else if(comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement") && fromDate!=null && toDate!=null){
-			response.sendRedirect("foodEnforcement.jsp?fromDate="+fromDate+"&toDate="+toDate+"");
+		else if(comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement")){
+			response.sendRedirect("foodEnforcement.jsp?fromDate="+fromDate+"&toDate="+toDate+"&reasonForRecall="+reasonForRecall+"&classification="+classification+"");
 		}else if(comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcementProductDetail")){
 			String eventId = request.getParameter("eventId");
 			response.sendRedirect("foodEnforcementEventDetail.jsp?eventId="+eventId+"");
