@@ -171,7 +171,7 @@
 		<div class="row">
             <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
         </div>
-        <div class="row">
+        <div class="row boxGray">
             <div class="col-sm-6 col-xs-12">
                 <dl>
                     <dt>Event ID</dt>
