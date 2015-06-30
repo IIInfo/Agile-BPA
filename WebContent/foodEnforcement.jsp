@@ -431,15 +431,12 @@
 					<div class="form-group">
 						<label for="datepicker">From Date</label>
 						<div class="input-group" id="fromDatePicker">
-							<input type="text" aria-describedby="demo1HelpText2"
-								maxlength="10" class="form-control hasDatepicker" id="fromDate"
-								name="fromDate"><span class="input-group-btn"><button
-									class="btn btn-default ui-datepicker-trigger" type="button" id="fromDate">
-									<span><span class="fa fa-calendar"
-										style="font-family: 'FontAwesome' !important"><span
-											class="sr-only">Calendar icon</span></span><span class="sr-only">Select
-											date</span></span>
-								</button></span>
+							<input type="text" aria-describedby="demo1HelpText2" maxlength="10" class="form-control hasDatepicker" id="fromDate" name="fromDate">
+                            <span class="input-group-btn">
+                                <!---<button class="btn btn-default ui-datepicker-trigger" type="button" id="fromDate">
+                                    <span><span class="fa fa-calendar" style="font-family: 'FontAwesome' !important"><span class="sr-only">Calendar icon</span></span><span class="sr-only">Select date</span></span>
+                                </button>--->
+                            </span>
 						</div>
 						<!-- /input-group -->
 					</div>
@@ -449,16 +446,14 @@
 					<div class="form-group">
 						<label for="datepicker">To Date</label>
 						<div class="input-group" id="toDatePicker">
-							<input type="text" aria-describedby="demo1HelpText2"
-								maxlength="10" class="form-control hasDatepicker" id="toDate"
-								name="toDate"><span class="input-group-btn"
-								id="toDatePickerGlyph"><button
-									class="btn btn-default ui-datepicker-trigger" type="button">
-									<span><span class="fa fa-calendar"
-										style="font-family: 'FontAwesome' !important"><span
-											class="sr-only">Calendar icon</span></span><span class="sr-only">Select
-											date</span></span>
-								</button></span>
+							<input type="text" aria-describedby="demo1HelpText2" maxlength="10" class="form-control hasDatepicker" id="toDate" name="toDate">
+                            <span class="input-group-btn" id="toDatePickerGlyph">
+                            <span>
+                                <!---<button class="btn btn-default ui-datepicker-trigger" type="button">
+                                    <span class="fa fa-calendar" style="font-family: 'FontAwesome' !important">
+                                    <span class="sr-only">Calendar icon</span></span><span class="sr-only">Select date</span></span>
+                                </button>--->
+                            </span>
 						</div>
 						<!-- /input-group -->
 					</div>
