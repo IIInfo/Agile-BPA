@@ -546,12 +546,6 @@
 						</tr>
 					</thead>
 				</table>
-				<p class="textHelp">
-					Note: If you need help accessing information in different file
-					formats, see <a target="_blank"
-						href="http://www.fda.gov/AboutFDA/AboutThisWebsite/WebsitePolicies/ViewingFiles/default.htm">Instructions
-						for Downloading Viewers and Players</a>.
-				</p>
 			</div>
 		</div>
 
