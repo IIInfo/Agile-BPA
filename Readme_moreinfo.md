@@ -7,7 +7,8 @@ The Agile-BPA WebApp repository contains the (FDAs open standard API access prot
 ## Getting Started
 
 - Install/Deploy: Deploy the war file from the deploy directory `agile-bpa.war` onto any J2EE web container (webserver)
-- Run: Open the browser and access the webserver url (like. http://<hostname>:<port>/`agile-bpa`)
+- Install/Deploy: Deploy docker image from  `https://registry.hub.docker.com/u/ppandyaiiinfo/agile-bpa/`
+- http://<hostname>:<port>/`agile-bpa`)
 - Docker: Access the docker..... for preview[\*](#docker-note) Docker Note. 
 
 
