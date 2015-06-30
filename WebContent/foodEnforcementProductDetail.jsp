@@ -9,6 +9,7 @@
     <title>RecallsFeed | powered by FDA</title>
 
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="css/recalls.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
@@ -22,6 +23,7 @@
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 
 <script>
 	
