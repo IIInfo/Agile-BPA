@@ -6,6 +6,11 @@ body {
     margin-bottom: 60px;
     font-family: 'Open Sans', sans-serif;
 }
+th, td { 
+	padding:6px; 
+	text-align:left; 
+	vertical-align:top; 
+}
 h1 {
     font-weight:600;
 }
