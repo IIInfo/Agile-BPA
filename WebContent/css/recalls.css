@@ -220,4 +220,4 @@ only screen and (max-width: 760px),
     margin-bottom:30px;
 }
 
-.boxGray { border:1px solid #e5e5e5; padding:10px; }
+.boxGray { border:1px solid #e5e5e5; margin:0 18px; padding:10px; width:95%; }
