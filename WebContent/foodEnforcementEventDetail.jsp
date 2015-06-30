@@ -21,6 +21,8 @@
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="css/dataTables.bootstrap.css"></script>
 
 <script>
 	
@@ -115,6 +117,12 @@
 		  		"stateLoadCallback": function (settings) {
 		    		return JSON.parse(localStorage.getItem('foodEnforcement_results' ));
 		 		},
+		 		"lengthMenu" : [ [ 10, 25, 50, -1 ],
+									[ 10, 25, 50, "All" ] ],
+				"oLanguage" : {
+								"sSearch" : "Filter Dataset Below: ",
+								"sEmptyTable" : "No results found."
+							}
 				
 			 } );
 		}
@@ -146,9 +154,9 @@
 	<h1>Details for Event ID <%= request.getParameter("eventId") %></h1>
 	</div>
    	<div class="col-xs-2 shareContainer">
-                    <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-envelope-o"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
     </div>
     </div><!--END ROW-->
  

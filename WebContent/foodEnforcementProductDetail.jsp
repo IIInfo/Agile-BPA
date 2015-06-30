@@ -108,9 +108,9 @@
 	<h1>Enforcement Report</h1>
 	</div>
    	<div class="col-xs-2 shareContainer">
-                    <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-envelope-o"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
     </div>
     </div><!--END ROW-->
    
@@ -122,7 +122,7 @@
     </form>
     
    <div class="row">
-            <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
+            <div class="col-xs-12"><h2 class="margin-top10">Product Details</h2></div>
         </div>
         <div class="row">
             <div class="col-sm-6 col-xs-12">

@@ -22,7 +22,7 @@
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>
-
+    <script src="js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css"
 	href="assets/bootstrap-datepicker/css/datepicker.css" />
@@ -34,7 +34,6 @@
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
-<script type="text/javascript" src="js/dataTables.tableTools.js"></script>
 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="css/dataTables.bootstrap.css"></script>
 
@@ -50,15 +49,13 @@
 				a.unwrap();
 			}
 			do {
-				$(a.slice(0, 3)).wrapAll(
-						"<ul class="item row" role="presentation"></ul>");
+                    $(a.slice(0, 3)).wrapAll("<ul class="item row" role="presentation"></ul>");
 			} while ((a = a.slice(3)).length > 0);
 			$("#myCarousel ul.item").first().addClass("active");
 		} else {
 			var a = $("#myCarousel li");
 			a.unwrap();
-			$("#myCarousel li").wrapAll(
-					"<ul class="carousel-inner" role="list"></ul>");
+                $("#myCarousel li").wrapAll("<ul class="carousel-inner" role="list"></ul>");
 			$(".left.carousel-control").hide();
 			$(".right.carousel-control").hide();
 		}
@@ -187,7 +184,9 @@
 				alert("Search found no results");
 			}
 		});
+
 		window.locaion.reload();
+
 	}
 
 	function getFormattedDate(date) {
@@ -239,17 +238,40 @@
 
 	function downloadCSV() {
 
-		var csv_content = document.write(dataArray.join(", "));
-		var encoded_uri = encodeURI(csv_content);
+		var date = new Date();
+		var dateFormatMMDDYYYY = ((date.getMonth() + 1) + '-' + date.getDate()
+				+ '-' + date.getFullYear());
 
-		$("#enforcementReportDownloadCSV").attr('href', encoded_uri);
-		$("#enforcementReportDownloadCSV").attr('download', 'enforcement.csv');
+		var csvContent = "data:text/csv;charset=utf-8,";
 
+		csvContent += "PRODUCT DESCRIPTION" + " , " + "CLASSIFICATION" + " , "
+				+ "REASON FOR RECALL" + " , " + "RECALLING FIRM" + " , "
+				+ "DISTRIBUTION PATTERN" + " \n";
+
+		dataArray.forEach(function(infoArray, index) {
+			csvContent += infoArray[0].replace(/,/g, ":") + " , "
+					+ infoArray[1].replace(/,/g, ":") + " , "
+					+ infoArray[2].replace(/,/g, ":") + " , "
+					+ infoArray[3].replace(/,/g, ":") + " , "
+					+ infoArray[4].replace(/,/g, ":") + " \n ";
+		});
+
+		var encodedUri = encodeURI(csvContent);
+		var link = document.createElement("a");
+		link.setAttribute("href", encodedUri);
+		link.setAttribute("download", "enforcement" + dateFormatMMDDYYYY
+				+ ".csv");
+
+		link.click();
 	}
 
 	var dataArray;
 
 	function processResult(data) {
+
+		$('#fromDatePicker input').datepicker();
+		$('#toDatePicker input').datepicker();
+
 		var metaTotal = data.results.length;
 		dataArray = new Array();
 		var comingFrom = document.getElementById("comingFrom").value;
@@ -284,27 +306,26 @@
 		localStorage.setItem('resultObject', JSON.stringify(detailArray));
 
 		// Generate the data table
-		$('#tblResults').DataTable(
-				{
-					data : dataArray,
-					stateSave : true,
-					"sDom ": 'T<"clear ">lfrtip',
-					"stateSaveCallback" : function(settings, data) {
-						localStorage.setItem('foodEnforcement_results', JSON
-								.stringify(data));
-					},
-					"stateLoadCallback" : function(settings) {
-						return JSON.parse(localStorage
-								.getItem('foodEnforcement_results'));
-					},
-					"oLanguage" : {
-						"sSearch" : "Filter: "
-					},
-					"oTableTools" : {
-						"aButtons" : [ "csv " ]
-					}
-
-				});
+		var table = $('#tblResults')
+				.DataTable(
+						{
+							data : dataArray,
+							stateSave : true,
+							"lengthMenu" : [ [ 10, 25, 50, -1 ],
+									[ 10, 25, 50, "All" ] ],
+							"stateSaveCallback" : function(settings, data) {
+								localStorage.setItem('foodEnforcement_results',
+										JSON.stringify(data));
+							},
+							"stateLoadCallback" : function(settings) {
+								return JSON.parse(localStorage
+										.getItem('foodEnforcement_results'));
+							},
+							"oLanguage" : {
+								"sSearch" : "Filter Dataset Below: ",
+								"sEmptyTable" : "No results found."
+							}
+						});
 	}
 </script>
 </head>
@@ -328,64 +349,53 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
+		 <div class="row">
+                <div class="col-xs-12">
 
-				<div id="carousel-example-generic" class="carousel slide"
-					data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-example-generic" data-slide-to="0"
-							class="active"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					</ol>
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
 
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<img src="images/slide1.jpg" alt="...">
-							<div class="carousel-caption">
-								<p>
-									<strong>14 brands of bottled water</strong> recalled due to
-									possible E. coli
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<img src="images/slide2.jpg" alt="...">
-							<div class="carousel-caption">
-								<p>
-									<strong>300 brands of caramel apples</strong> recalled&mdash;35
-									people ill
-								</p>
-							</div>
-						</div>
-						<div class="item">
-							<img src="images/slide3.jpg" alt="...">
-							<div class="carousel-caption">
-								<p>
-									<strong>Undeclared ingredient:</strong> peanuts found in cumin
-									powder
-								</p>
-							</div>
-						</div>
-					</div>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="images/slide1.jpg" alt="...">
+                                <div class="carousel-caption">
+                                    <p><strong>14 brands of bottled water</strong> recalled due to possible E. coli</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="images/slide2.jpg" alt="...">
+                                <div class="carousel-caption">
+                                    <p><strong>300 brands of caramel apples</strong> recalled&mdash;35 people ill</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="images/slide3.jpg" alt="...">
+                                <div class="carousel-caption">
+                                    <p><strong>Undeclared ingredient:</strong> peanuts found in cumin powder</p>
+                                </div>
+                            </div>
+                        </div>
 
-					<!-- Controls -->
-					<a class="left carousel-control" href="#carousel-example-generic"
-						role="button" data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a> <a class="right carousel-control" href="#carousel-example-generic"
-						role="button" data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
 
-			</div>
-		</div>
+                </div>
+            </div>
+
 
 		<div class="row =">
 			<div class="col-xs-12">
@@ -415,9 +425,9 @@
 
 				<div class="col-md-4 col-xs-12">
 					<div class="form-group">
-						<label for="keywords">Filter Results by Keyword(s):</label> <input
+						<label for="keywords">Food Name</label> <input
 							type="search" id="reasonForRecall" name="reasonForRecall"
-							placeholder="&lt;chicken&gt; or &lt;chicken Maryland&gt;"
+							placeholder="&lt;chicken&gt;  &lt;seafood&gt;  &lt;peanut butter&gt;"
 							class="form-control">
 					</div>
 				</div>
@@ -514,8 +524,9 @@
 					%>
 				</div>
 				<div class="col-xs-4 col-md-2">
-					<a id="downloadCsv"><i class="fa fa-lg fa-download"></i>
-						Download CSV</a>
+					<a id="enforcementReportDownloadCSV" target="_blank"
+						onclick="javascript:downloadCSV();"><i
+						class="fa fa-lg fa-download"></i> Download CSV</a>
 				</div>
 
 			</div>
