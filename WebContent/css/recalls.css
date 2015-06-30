@@ -6,11 +6,6 @@ body {
     margin-bottom: 60px;
     font-family: 'Open Sans', sans-serif;
 }
-th, td { 
-	padding:6px; 
-	text-align:left; 
-	vertical-align:top; 
-}
 h1 {
     font-weight:600;
 }
@@ -28,7 +23,7 @@ h1 {
     z-index:100;
 }
 .fda-logo {
-    margin-top:10px;
+    margin-top:15px;
 }
 .carousel {
     margin-top:25px;
@@ -51,15 +46,20 @@ dd {
 }
 @media (max-width : 5000px) {
     .logo {
-        height:96px;
-        margin-left:-50px;
+        height: 54px;
+        margin-top: -5px;
+    }
+    .logoimg {
+        height: 80px;
+        margin-top: 10px;
+        margin-left:-20px;
     }
     .header{
         height:80px;
     }
     .headerRight {
-        font-size: 16px;
-        margin-top:43px;
+        font-size: 15px;
+        margin-top: 48px;
         text-align:right;
     }
     .carousel-caption {
@@ -67,14 +67,20 @@ dd {
         text-shadow: 2px 2px 3px #000;
     }
     td.details {
-    text-align:center;
+        text-align:center;
 }
 }
 
 @media (max-width : 768px) {
     .logo {
-        height: 50px;
-        margin-left:-10px;
+        height: 28px;
+        margin-top: -1px;
+    }
+
+    .logoimg {
+        height: 42px;
+        margin-left: -10px;
+        margin-top: 8px;
     }
 
     .header{
@@ -82,8 +88,9 @@ dd {
     }
     .headerRight {
         font-size: 12px;
-        line-height:12px;
-        margin-top:18px;
+        line-height: 12px;
+        margin-bottom: 0;
+        margin-top: 24px;
     }
 
     .carousel-indicators {
@@ -94,7 +101,7 @@ dd {
     .carousel-caption {
         bottom: 0px;
         padding-bottom: 10px;
-        font-size: 11pt;
+        font-size: 10pt;
         text-shadow: 2px 2px 3px #000;
     }
     td.details {
@@ -103,10 +110,10 @@ dd {
 }
 @media (max-width: 480px) {
     .headerRight {
-        font-size: 12px;
-        line-height:12px;
-        margin-top:8px;
-    }
+    font-size: 9px;
+    line-height: 11px;
+    margin-top: 14px;
+}
 }
 .searchButton {
     margin-top: 25px;
@@ -122,6 +129,7 @@ dd {
     border-radius: 4px;
     padding: 10px 15px 10px 15px;
     margin-bottom:10px;
+    margin-top: 10px;
 }
 .textHelp {
     font-size:10pt;
@@ -146,7 +154,6 @@ th {
 td, th { 
   padding: 6px; 
   text-align: left; 
-  vertical-align:top;
 }
 @media 
 only screen and (max-width: 760px),
