@@ -9,6 +9,8 @@ body {
 h1 {
     font-weight:600;
 }
+a { text-decoration: underline; }
+
 .header {
     background-color: #d9510f;
     color: #ffffff;
@@ -30,16 +32,16 @@ h1 {
 }
 
 dd {
-    line-height:14pt;
+    line-height:16pt;
 }
 
 dt {
-    font-size:14pt;
+    font-size:12pt;
     font-weight:600;
 }
 dd {
     font-size:12pt;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 .shareContainer{
     margin-top:25px;

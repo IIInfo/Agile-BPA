@@ -394,11 +394,8 @@
 
 		<div class="row =">
 			<div class="col-xs-12">
-				<h1>FDA Food Recalls</h1>
-				<p>Search and browse the latest food recalls. When an
-					FDA-regulated product is either defective or potentially harmful,
-					recalling that product (removing it from the market or correcting
-					the problem) is the most effective means for protecting the public.</p>
+				<h1>Enforcement Reports - Recall Information for Food</h1>
+				<p>Food and Drug Administration’s Recalls Database tracks and posts all food and beverage recalls. Search by product name, or check the recent recalls feed below.</p>
 			</div>
 		</div>
 		<!--END ROW-->

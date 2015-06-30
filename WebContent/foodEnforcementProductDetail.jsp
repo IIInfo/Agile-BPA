@@ -129,7 +129,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <dl>
+                <dl class="dl-horizontal">
                     <dt>Product Description</dt>
                     <dd id="1"></dd>
                     <dt>Recall Number</dt>
