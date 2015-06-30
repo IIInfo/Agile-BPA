@@ -110,8 +110,7 @@
 	<div class="container">
         <div class="row margin-top15">
             <div class="col-xs-10">
-            	<a href="FoodEnforcementServlet?event=Home">Home</a>
-                <h1>Details for Product ID <%= request.getParameter("productId") %></h1>
+                <h1>Details for Product ID <%= request.getParameter("recallNumber") %></h1>
             </div>
             <div class="col-xs-2 shareContainer">
                 <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>

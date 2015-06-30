@@ -154,7 +154,6 @@
 	<div class="container">
         <div class="row margin-top15">
             <div class="col-xs-10">
-				<a href="FoodEnforcementServlet?event=Home">Home</a>
 				<h1>Details for Event ID <%= request.getParameter("eventId") %></h1>
 			</div>
    			<div class="col-xs-2 shareContainer">
