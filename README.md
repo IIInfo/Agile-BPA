@@ -1,41 +1,11 @@
-Agile-BPA
-==========
+## URL to Prototype
 
-The Agile-BPA WebApp repository contains the (FDAs open standard API access prototype)
+[Prototpye](http://opensource.org/licenses/bsd-license.php)
 
-
-## Getting Started
-
-- Install/Deploy: Deploy the war file from the deploy directory `agile-bpa.war` onto any J2EE web container (webserver)
-- Run: Open the browser and access the webserver url (like. http://<hostname>:<port>/`agile-bpa`)
-- Docker: Access the docker..... for preview[\*](#docker-note) Docker Note. 
+Technical Approach
+==================
 
 
-#### Third-Party Dependencies
-
-*(HTML/CSS/JS/Images/etc)*
-
-Third-party dependencies are bundled within the web application. 
-
-
-#### Docker Image
-
-Note: Docker Image of the web application with all the depenencies included can be found at [agile-bpa] (https://registry.hub.docker.com/u/ppandyaiiinfo/agile-bpa/)
-
-
-## Docs
-
-
-
-
-## Contribute
-
-Note: We are regularly asked whether we can add or take away features. If a change is good enough to have a positive impact on all users, we are happy to consider it.
-
-
-## License
-
-[BSD license](http://opensource.org/licenses/bsd-license.php)
 
 ## Copyright
 
