@@ -157,9 +157,9 @@
 				<h1>Details for Event ID <%= request.getParameter("eventId") %></h1>
 			</div>
    			<div class="col-xs-2 shareContainer">
-                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                <a href="#"><i class="fa fa-2x fa-envelope-o"></i></a>
+                <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
+                <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
+                <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
     		</div>
     	</div><!--END ROW-->
  

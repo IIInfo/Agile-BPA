@@ -438,7 +438,7 @@
 							<input type="text" aria-describedby="demo1HelpText2"
 								maxlength="10" class="form-control hasDatepicker" id="fromDate"
 								name="fromDate"><span class="input-group-btn"><button
-									class="btn btn-default ui-datepicker-trigger" type="button">
+									class="btn btn-default ui-datepicker-trigger" type="button" id="fromDate">
 									<span><span class="fa fa-calendar"
 										style="font-family: 'FontAwesome' !important"><span
 											class="sr-only">Calendar icon</span></span><span class="sr-only">Select
