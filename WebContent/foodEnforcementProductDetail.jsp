@@ -144,13 +144,12 @@
                     <dd id="6"></dd>
                 </dl>
             </div>
-           
             
+        </div><!--END ROW-->
+        
         <div class="col-xs-12">
             <div class="lineRule"></div>
         </div>
-            
-        </div><!--END ROW-->
     
      	<div class="row">
             <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>

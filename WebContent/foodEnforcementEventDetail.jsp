@@ -203,11 +203,11 @@
                 </dl>
             </div>
             
-            <div class="col-xs-12">
-                <div class="lineRule"></div>
-            </div>
-            
         </div><!--END ROW-->
+        
+        <div class="col-xs-12">
+            <div class="lineRule"></div>
+        </div>
     
      	<div class="row margin-bottom30">
             <div class="col-xs-12">
