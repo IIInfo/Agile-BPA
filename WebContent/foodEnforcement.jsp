@@ -332,21 +332,20 @@
 <body>
 
 	<div class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-8">
-					<div class="header">
-						<img class="logo" src="images/logo2.png" alt="Recallsfeed">
-					</div>
-				</div>
-				<div class="col-xs-4">
-					<p class="headerRight">
-						powered by <strong>openFDA</strong>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-9">
+                    <a href="index.html"><div class="header">
+                        <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
+                        <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
+                    </div></a>
+                </div>
+                <div class="col-xs-3">
+                    <p class="headerRight">powered by <strong>openFDA</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<div class="container">
 		 <div class="row">
