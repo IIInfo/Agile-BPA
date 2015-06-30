@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-  	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>RecallsFeed | powered by FDA</title>
 
-  	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <title>RecallsFeed | powered by FDA</title>
+
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="css/recalls.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
@@ -22,7 +24,6 @@
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="css/dataTables.bootstrap.css"></script>
 
 <script>
 	
@@ -132,40 +133,43 @@
 </head>
 <body>
 
- <div class="header">
+	<div class="header">
         <div class="container">
             <div class="row">
-                <div class="col-xs-8">
-                    <div class="header">
-                        <img class="logo" src="images/logo2.png" alt="Recallsfeed">
-                    </div>
+                <div class="col-xs-9">
+                    <a href="index.html">
+                        <div class="header">
+                            <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
+                            <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
+                        </div>
+                    </a>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <p class="headerRight">powered by <strong>openFDA</strong></p>
                 </div>
             </div>
         </div>
     </div>
 
- <div class="container">
-            <div class="row margin-top15">
-                <div class="col-xs-10">
-	 <a href="FoodEnforcementServlet?event=Home">Home</a>
-	<h1>Details for Event ID <%= request.getParameter("eventId") %></h1>
-	</div>
-   	<div class="col-xs-2 shareContainer">
-                    <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
-    </div>
-    </div><!--END ROW-->
+	<div class="container">
+        <div class="row margin-top15">
+            <div class="col-xs-10">
+				<a href="FoodEnforcementServlet?event=Home">Home</a>
+				<h1>Details for Event ID <%= request.getParameter("eventId") %></h1>
+			</div>
+   			<div class="col-xs-2 shareContainer">
+                <a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                <a href="#"><i class="fa fa-2x fa-envelope-o"></i></a>
+    		</div>
+    	</div><!--END ROW-->
  
-    <form>
-    <input type="hidden" name="eventId" id="eventId" value="<%= request.getParameter("eventId") %>"/>
-    <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementEventDetail"/>
-    </form>
+        <form>
+            <input type="hidden" name="eventId" id="eventId" value="<%= request.getParameter("eventId") %>"/>
+            <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementEventDetail"/>
+        </form>
     
-       <div class="row">
+		<div class="row">
             <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
         </div>
         <div class="row">
@@ -204,39 +208,35 @@
             </div>
         </div><!--END ROW-->
     
-     <div class="row margin-bottom30">
+     	<div class="row margin-bottom30">
             <div class="col-xs-12">
                 <h2>Product Details</h2>
-           <table summary="Product Details" class="product" id="tblResults">
-		<thead>
-		<tr>
-			<th scope="row">Product Description</th>
-			<th scope="row">Code Info</th>
-			<th scope="row">Classification</th>
-			<th scope="row">Reason for Recall</th>
-			<th scope="row">Product Quantity</th>
-            <th scope="row">Recall Number</th>
-		</tr>
-		</thead>
-	</table>
-    <p class="textHelp">Note: If you need help accessing information in different file formats, see <a target="_blank" href="http://www.fda.gov/AboutFDA/AboutThisWebsite/WebsitePolicies/ViewingFiles/default.htm">Instructions for Downloading Viewers and Players</a>.</p>
+			<table summary="Product Details" class="product" id="tblResults">
+				<thead>
+                <tr>
+                    <th scope="row">Product Description</th>
+                    <th scope="row">Code Info</th>
+                    <th scope="row">Classification</th>
+                    <th scope="row">Reason for Recall</th>
+                    <th scope="row">Product Quantity</th>
+                    <th scope="row">Recall Number</th>
+                </tr>
+				</thead>
+			</table>
             </div>
+
         </div><!--END ROW-->
-	
      </div>
 
-
-
-
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <a href="http://www.fda.gov/"><img class="fda-logo" src="images/fda-logo.png" alt="FDA" /></a>
-                    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href="http://www.fda.gov/"><img class="fda-logo" src="images/fda-logo.png" alt="FDA" /></a>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
 </body>
 </html>
