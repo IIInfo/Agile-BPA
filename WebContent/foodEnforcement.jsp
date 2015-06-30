@@ -13,23 +13,19 @@
 <title>RecallsFeed | powered by FDA</title>
 
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<link href="css/dataTables.bootstrap.css" rel="stylesheet" />
 <link href="css/recalls.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/datepicker.css">
-<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600'
-	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css"
-	href="assets/bootstrap-datepicker/css/datepicker.css" />
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript"
-	src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <!-- jQuery -->
 <!-- DataTables -->
