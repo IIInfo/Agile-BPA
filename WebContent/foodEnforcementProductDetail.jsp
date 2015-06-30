@@ -127,8 +127,11 @@
    		<div class="row">
             <div class="col-xs-12"><h2 class="margin-top10">Product Details</h2></div>
         </div>
+        <div class="col-xs-12">
+            <div class="lineRule"></div>
+        </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 boxGray">
                 <dl class="dl-horizontal">
                     <dt>Product Description</dt>
                     <dd id="1"></dd>
@@ -145,9 +148,7 @@
                 </dl>
             </div>
            
-            <div class="col-xs-12">
-                <div class="lineRule"></div>
-            </div>
+            
             
         </div><!--END ROW-->
     
