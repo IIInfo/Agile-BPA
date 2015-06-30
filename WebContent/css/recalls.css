@@ -142,6 +142,11 @@ table {
   width: 100%; 
   border-collapse: collapse; 
 }
+td, th {
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+}
 /* Zebra striping */
 tr:nth-of-type(odd) { 
   background: #eee; 
