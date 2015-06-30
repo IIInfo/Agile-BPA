@@ -227,6 +227,11 @@
             </div>
 
         </div><!--END ROW-->
+        
+        <div class="col-xs-12">
+            <div class="lineRule"></div>
+        </div>
+        
      </div>
 
     <footer class="footer">
