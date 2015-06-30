@@ -149,6 +149,7 @@
             <div class="col-xs-12">
                 <div class="lineRule"></div>
             </div>
+            
         </div><!--END ROW-->
     
      	<div class="row">
@@ -184,9 +185,6 @@
                     <dt>Distribution Pattern</dt>
                     <dd id="17"></dd>
                 </dl>
-            </div>
-            <div class="col-xs-12">
-                <div class="lineRule"></div>
             </div>
 
         </div>
