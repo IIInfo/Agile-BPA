@@ -232,7 +232,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-4">
-                    <a href="http://www.fda.gov/"><img class="fda-logo" src="images/fda-logo.png" alt="FDA" /></a>
+                    <a href="http://www.fda.gov/"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
                 </div>
             </div>
         </div>
