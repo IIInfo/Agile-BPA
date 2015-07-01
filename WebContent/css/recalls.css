@@ -1,4 +1,4 @@
-﻿html {
+html {
     min-height: 100%;
     position: relative;
 }
@@ -202,11 +202,12 @@ only screen and (max-width: 760px),
 	/*
 	Label the data
 	*/
-	td:nth-of-type(1):before { content: "Product Description"; }
-	td:nth-of-type(2):before { content: "Classification"; }
-	td:nth-of-type(3):before { content: "Reason for Recall"; }
-	td:nth-of-type(4):before { content: "Recalling Firm"; }
-	td:nth-of-type(5):before { content: "Distribution Pattern"; }
+	td:nth-of-type(1):before { content: "Recall Date"; }
+	td:nth-of-type(2):before { content: "Product Description"; }
+	td:nth-of-type(3):before { content: "Classification"; }
+	td:nth-of-type(4):before { content: "Reason for Recall"; }
+	td:nth-of-type(5):before { content: "Recalling Firm"; }
+	td:nth-of-type(6):before { content: "Distribution Pattern"; }
 	td:nth-of-type(7):before { content: "Event Details"; }
 }
 
