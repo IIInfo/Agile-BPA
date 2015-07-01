@@ -95,7 +95,7 @@
 								.getElementById("reasonForRecallValue").value;
 						var classificationValue = document
 								.getElementById("classificationValue").value;
-
+						
 						if ((fromDateValue != '' && toDateValue != ''
 								&& fromDateValue != "null"
 								&& toDateValue != "null"
@@ -103,7 +103,8 @@
 								|| (reasonForRecallValue != ''
 										&& reasonForRecallValue != null && reasonForRecallValue != "null")
 								|| (classificationValue != ''
-										&& classificationValue != null && classificationValue != "null")) {
+										&& classificationValue != null && classificationValue != "null"
+										&& classificationValue != "All")) {
 							searchResultsByDate();
 						} else {
 							retrieveResults();
@@ -121,38 +122,20 @@
 		var classification = document.getElementById("classificationValue").value;
 		var fromDateParameter = "";
 		var toDateParameter = "";
-		//alert(fromDate);
-		//alert(toDate);
+		
 		if (fromDate != '' && toDate != '' && fromDate != "null"
 				&& toDate != "null" && fromDate != null && toDate != null) {
 			var fromDateParts = fromDate.slice(0, 10).split('/');
 			fromDateParameter = fromDateParts[2] + fromDateParts[0]
 					+ fromDateParts[1];
-			//alert(fromDateParameter);
+			
 			var toDateParts = toDate.slice(0, 10).split('/');
 			toDateParameter = toDateParts[2] + toDateParts[0] + toDateParts[1];
-			//alert(toDateParameter);
-			document.getElementById("fromDate").value = document
-					.getElementById("fromDateValue").value;
-			document.getElementById("toDate").value = document
-					.getElementById("toDateValue").value;
+			
 		} else {
 			var today = new Date();
 			fromDateParameter = date_by_subtracting_days(today, 90);
 			toDateParameter = getFormattedDate(today);
-
-			var fromYear = fromDateParameter.substring(0, 4);
-			var fromMonth = fromDateParameter.substring(4, 6);
-			var fromDay = fromDateParameter.substring(6, 8);
-			var fromDateFieldValue = fromMonth + "/" + fromDay + "/" + fromYear;
-
-			var toYear = toDateParameter.substring(0, 4);
-			var toMonth = toDateParameter.substring(4, 6);
-			var toDay = toDateParameter.substring(6, 8);
-			var toDateFieldValue = toMonth + "/" + toDay + "/" + toYear;
-
-			document.getElementById("fromDate").value = fromDateFieldValue;
-			document.getElementById("toDate").value = toDateFieldValue;
 		}
 
 		var openFdaSearchFoodEnforcements = '&search=report_date:['
@@ -162,16 +145,14 @@
 
 		if (reasonForRecall != '' && reasonForRecall != null
 				&& reasonForRecall != "null") {
-			searchWithReasonForRecall = '+reason_for_recall:"'
+			reasonForRecall = reasonForRecall.replace(' ', '+');
+			searchWithReasonForRecall = '+AND+reason_for_recall:"'
 					+ reasonForRecall + '"';
-			document.getElementById("reasonForRecall").value = document
-					.getElementById("reasonForRecallValue").value;
 		}
-		if (classification != null && classification != "null") {
-			searchWithClassification = '+classification:"' + classification
+		if (classification != null && classification != "null" && classification != "All") {
+			classification = classification.replace(' ', '+');
+			searchWithClassification = '+AND+classification:"' + classification
 					+ '"';
-			document.getElementById("classification").value = document
-					.getElementById("classificationValue").value;
 		}
 		//var openFdaSearchIndications='&search=openfda.indications_and_usage:{search}';
 
@@ -267,7 +248,7 @@
 		return false;
 	}
 	
-	function formatRecallInitationDate(recall_initiation_date){
+	function formatRecallDate(recall_initiation_date){
 			var year = recall_initiation_date.substring(0, 4);
 			var month = recall_initiation_date.substring(4, 6);
 			var day = recall_initiation_date.substring(6, 8);
@@ -305,7 +286,7 @@
 
 			var recallNumber = thisRow.recall_number;
 			
-			rowArray.push(formatRecallInitationDate(thisRow.report_date));
+			rowArray.push(formatRecallDate(thisRow.report_date));
 			rowArray.push(thisRow.product_description);
 			rowArray.push(thisRow.classification);
 			rowArray.push(thisRow.reason_for_recall);
@@ -325,7 +306,7 @@
 										JSON.stringify(detailArray));
 	
 		document.getElementById("dataObject").value = JSON.stringify(detailArray);
-
+		var oldStart = 0;
 		// Generate the data table
 		var table = $('#tblResults')
 				.DataTable(
@@ -344,10 +325,18 @@
 										.getItem('foodEnforcement_results'));
 							},
 							"oLanguage" : {
-								"sSearch" : "Filter Dataset Below: ",
-								"sEmptyTable" : "No results found."
+								"sSearch" : "Filter Dataset Below: "
+								
 							},
-							"order": [[ 0, "desc" ]]
+							"order": [[ 0, "desc" ]],
+					        drawCallback: function (o) {
+				            var newStart = this.api().page.info().start;
+				            if ( newStart != oldStart ) {
+				                var targetOffset = $('#tblResults').offset().top;
+				                $('html,body').animate({scrollTop: targetOffset}, 500);
+				                oldStart = newStart;
+				            }
+				        }
 						});
 	}
 	
@@ -561,10 +550,30 @@ only screen and (max-width: 760px),
 					%>
 					Results displayed are from <strong><%=fromDate%></strong> to <strong><%=toDate%></strong>
 					<%
+					String classification = request.getParameter("classification");
+					if (classification != null && classification != "" && classification != "null") { %> 
+					for Seriousness: <strong><%=request.getParameter("classification")%></strong>
+					<%}%>
+					<%
+					String reasonForRecall = request.getParameter("reasonForRecall");
+					if (reasonForRecall != null && reasonForRecall != "" && reasonForRecall != "null") { %> 
+					for Food Name: <strong><%=request.getParameter("reasonForRecall")%></strong> 
+					<%}%>
+					<%
 						} else {
 					%>
 					Results displayed are from <strong><%=request.getParameter("fromDate")%></strong>
 					to <strong><%=request.getParameter("toDate")%></strong>
+					<%
+					String classification = request.getParameter("classification");
+					if (classification != null && classification != "" && classification != "null") { %> 
+					for Seriousness: <strong><%=request.getParameter("classification")%></strong>
+					<%}%>
+					<%
+					String reasonForRecall = request.getParameter("reasonForRecall");
+					if (reasonForRecall != null && reasonForRecall != "" && reasonForRecall != "null") { %> 
+					for Food Name: <strong><%=request.getParameter("reasonForRecall")%></strong> 
+					<%}%>
 					<%
 						}
 					%>
