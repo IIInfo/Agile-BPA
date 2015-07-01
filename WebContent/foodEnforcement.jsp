@@ -16,6 +16,9 @@
 <link href="css/recalls.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/datepicker.css">
+<link href="css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/sharewidget-4.0.css" />
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600'
 	rel='stylesheet' type='text/css'>
@@ -113,16 +116,17 @@
 		var classification = document.getElementById("classificationValue").value;
 		var fromDateParameter = "";
 		var toDateParameter = "";
-
+		//alert(fromDate);
+		//alert(toDate);
 		if (fromDate != '' && toDate != '' && fromDate != "null"
 				&& toDate != "null" && fromDate != null && toDate != null) {
 			var fromDateParts = fromDate.slice(0, 10).split('/');
 			fromDateParameter = fromDateParts[2] + fromDateParts[0]
 					+ fromDateParts[1];
-
+			//alert(fromDateParameter);
 			var toDateParts = toDate.slice(0, 10).split('/');
 			toDateParameter = toDateParts[2] + toDateParts[0] + toDateParts[1];
-
+			//alert(toDateParameter);
 			document.getElementById("fromDate").value = document
 					.getElementById("fromDateValue").value;
 			document.getElementById("toDate").value = document
@@ -181,7 +185,7 @@
 		}).fail(function(data) {
 			$("body").css("cursor", "default");
 			if (data.statusText == "Not Found") {
-				alert("Search found no results");
+				alert("No records found.");
 			}
 		});
 		
@@ -274,7 +278,7 @@
 
 			var recallNumber = thisRow.recall_number;
 			
-			rowArray.push(formatRecallInitationDate(thisRow.recall_initiation_date));
+			rowArray.push(formatRecallInitationDate(thisRow.report_date));
 			rowArray.push(thisRow.product_description);
 			rowArray.push(thisRow.classification);
 			rowArray.push(thisRow.reason_for_recall);
@@ -315,7 +319,8 @@
 							"oLanguage" : {
 								"sSearch" : "Filter Dataset Below: ",
 								"sEmptyTable" : "No results found."
-							}
+							},
+							"order": [[ 0, "desc" ]]
 						});
 	}
 	
@@ -325,21 +330,20 @@
 <body>
 
 	<div class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-8">
-					<div class="header">
-						<img class="logo" src="images/logo2.png" alt="Recallsfeed">
-					</div>
-				</div>
-				<div class="col-xs-4">
-					<p class="headerRight">
-						powered by <strong>openFDA</strong>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-9">
+                    <a href="index.html"><div class="header">
+                        <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
+                        <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
+                    </div></a>
+                </div>
+                <div class="col-xs-3">
+                    <p class="headerRight">powered by <strong>openFDA</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<div class="container">
 		 <div class="row">
@@ -392,11 +396,8 @@
 
 		<div class="row =">
 			<div class="col-xs-12">
-				<h1>FDA Food Recalls</h1>
-				<p>Search and browse the latest food recalls. When an
-					FDA-regulated product is either defective or potentially harmful,
-					recalling that product (removing it from the market or correcting
-					the problem) is the most effective means for protecting the public.</p>
+				<h1>Enforcement Reports - Recall Information for Food</h1>
+				<p>Food and Drug Administration’s Recalls Database tracks and posts all food and beverage recalls. Search by product name, or check the recent recalls feed below.</p>
 			</div>
 		</div>
 		<!--END ROW-->
@@ -422,7 +423,7 @@
 					<div class="form-group">
 						<label for="keywords">Food Name</label> <input
 							type="search" id="reasonForRecall" name="reasonForRecall"
-							placeholder="&lt;chicken&gt;  &lt;seafood&gt;  &lt;peanut butter&gt;"
+							placeholder="i.e. Peanut Butter"
 							class="form-control">
 					</div>
 				</div>
@@ -435,7 +436,7 @@
 								maxlength="10" class="form-control hasDatepicker" id="fromDate"
 								name="fromDate"><span class="input-group-btn"><button
 									class="btn btn-default ui-datepicker-trigger" type="button">
-									<span><span class="fa fa-calendar"
+									<span><span class="fa fa-calendar "
 										style="font-family: 'FontAwesome' !important"><span
 											class="sr-only">Calendar icon</span></span><span class="sr-only">Select
 											date</span></span>
@@ -544,12 +545,6 @@
 						</tr>
 					</thead>
 				</table>
-				<p class="textHelp">
-					Note: If you need help accessing information in different file
-					formats, see <a target="_blank"
-						href="http://www.fda.gov/AboutFDA/AboutThisWebsite/WebsitePolicies/ViewingFiles/default.htm">Instructions
-						for Downloading Viewers and Players</a>.
-				</p>
 			</div>
 		</div>
 
@@ -557,15 +552,13 @@
 
 	</div>
 	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-4">
-					<a href="http://www.fda.gov/"><img class="fda-logo"
-						src="images/fda-logo.png" alt="FDA" /></a>
-				</div>
-			</div>
-		</div>
-	</footer>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href="#"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

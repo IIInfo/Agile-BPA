@@ -55,7 +55,7 @@
 			$("body").css("cursor", "default");
 			if( data.statusText == "Not Found")
 			{
-				alert("Search found no results");
+				alert("No records found.");
 			}
 		} );
 	}
@@ -100,7 +100,7 @@
 				}
 				
 				rowArray.push(thisRow.product_description);
-	           	rowArray.push(thisRow.code_info);
+	           	//rowArray.push(thisRow.code_info);
 	           	rowArray.push(thisRow.classification);
 	           	rowArray.push(thisRow.reason_for_recall);
 	           	rowArray.push(thisRow.product_quantity);
@@ -137,12 +137,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-9">
-                    <a href="index.html">
-                        <div class="header">
-                            <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
-                            <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
-                        </div>
-                    </a>
+                    <a href="index.html"><div class="header">
+                        <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
+                        <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
+                    </div></a>
                 </div>
                 <div class="col-xs-3">
                     <p class="headerRight">powered by <strong>openFDA</strong></p>
@@ -204,10 +202,6 @@
             </div>
             
         </div><!--END ROW-->
-        
-        <div class="col-xs-12">
-            <div class="lineRule"></div>
-        </div>
     
      	<div class="row margin-bottom30">
             <div class="col-xs-12">
@@ -216,7 +210,6 @@
 				<thead>
                 <tr>
                     <th scope="row">Product Description</th>
-                    <th scope="row">Code Info</th>
                     <th scope="row">Classification</th>
                     <th scope="row">Reason for Recall</th>
                     <th scope="row">Product Quantity</th>
@@ -238,7 +231,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-4">
-                    <a href="http://www.fda.gov/"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+                    <a href="#"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
                 </div>
             </div>
         </div>
