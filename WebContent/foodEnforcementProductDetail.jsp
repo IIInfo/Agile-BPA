@@ -126,8 +126,8 @@
             <div class="col-xs-12"><h2 class="margin-top10">Product Details</h2></div>
         </div>
         <div class="row boxGray">
-            <div class="col-sm-6 col-xs-12">
-                <dl>
+            <div class="col-xs-12">
+                <dl class="dl-horizontal">
                     <dt>Product Description</dt>
                     <dd id="1"></dd>
                     <dt>Recall Number</dt>
