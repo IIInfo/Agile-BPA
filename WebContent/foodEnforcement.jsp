@@ -429,7 +429,7 @@ only screen and (max-width: 760px),
 		<div class="row =">
 			<div class="col-xs-12">
 				<h1>Enforcement Reports - Recall Information for Food</h1>
-				<p>Food and Drug Administration’s Recalls Database tracks and posts all food and beverage recalls. Search by product name, or check the recent recalls feed below.</p>
+				<p>Food and Drug Administration's Recalls Database tracks and posts all food and beverage recalls. Search by any combination of Food name, Date Range and Seriousness or check the recent recalls feed below.</p>
 			</div>
 		</div>
 		<!--END ROW-->

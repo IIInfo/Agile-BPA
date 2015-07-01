@@ -169,7 +169,7 @@ only screen and (max-width: 760px),
 	<div class="container">
         <div class="row margin-top15">
             <div class="col-xs-10">
-				<h1>Details for Event ID <%= request.getParameter("eventId") %></h1>
+				<h1>Event Detail Report</h1>
 			</div>
    			<div class="col-xs-2 shareContainer">
                 <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>

@@ -110,7 +110,7 @@
             <div class="row margin-top15">
                 <div class="col-xs-10">
 	 <a href="FoodEnforcementServlet?event=Home">Home</a>
-	<h1>Enforcement Report</h1>
+	<h1>Product Detail Report</h1>
 	</div>
    	<div class="col-xs-2 shareContainer">
                     <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
