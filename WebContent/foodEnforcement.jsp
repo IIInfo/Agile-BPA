@@ -326,6 +326,22 @@
 	
 
 </script>
+<style type="text/css">
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Recall Date"; }
+	td:nth-of-type(2):before { content: "Product Description"; }
+	td:nth-of-type(3):before { content: "Classification"; }
+	td:nth-of-type(4):before { content: "Reason for Recall"; }
+	td:nth-of-type(5):before { content: "Recalling Firm"; }
+	td:nth-of-type(6):before { content: "Distribution Pattern"; }
+	td:nth-of-type(7):before { content: "Event Details"; }
+}
+</style>
 </head>
 <body>
 
@@ -428,7 +444,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-2 col-xs-6">
+				<div class="col-md-2 col-xs-6" id="fromDatePickerID">
 					<div class="form-group">
 						<label for="datepicker">From Date</label>
 						<div class="input-group" id="fromDatePicker">
@@ -446,7 +462,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-2 col-xs-6">
+				<div class="col-md-2 col-xs-6" id="toDatePickerID">
 					<div class="form-group">
 						<label for="datepicker">To Date</label>
 						<div class="input-group" id="toDatePicker">

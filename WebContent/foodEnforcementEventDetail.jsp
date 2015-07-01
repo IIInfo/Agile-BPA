@@ -129,7 +129,20 @@
 		}
 
 </script>
-
+<style type="text/css">
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Product Description"; }
+	td:nth-of-type(2):before { content: "Classification"; }
+	td:nth-of-type(3):before { content: "Reason for Recall"; }
+	td:nth-of-type(4):before { content: "Product Quantity"; }
+	td:nth-of-type(5):before { content: "Recall Number"; }
+}
+</style>
 </head>
 <body>
 
