@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="utf-8" />
+
+	<meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>RecallsFeed | powered by FDA</title>
 
-    <title>RecallsFeed | powered by FDA</title>
-
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/dataTables.bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/recalls.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/sharewidget-4.0.css" />
-
  <!--Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -23,7 +21,6 @@
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
-<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 
 <script>
 	
@@ -33,7 +30,7 @@
 	
 	function retrieveResults() {
 		
-		var jsonString=localStorage.getItem('resultObject');		
+		var jsonString=localStorage.getItem('resultObject');	
 		var jsonObjects = $.parseJSON(jsonString);
 		
 		var recallNumberParameter = document.getElementById("recallNumber").value;
@@ -89,47 +86,47 @@
 </head>
 <body>
 
-	<div class="header">
+ <div class="header">
         <div class="container">
             <div class="row">
-                <div class="col-xs-9">
-                    <a href="index.html">
-                        <div class="header">
-                            <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
-                            <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
-                        </div>
-                    </a>
+                <div class="col-xs-8">
+                    <div class="header">
+                        <img class="logo" src="images/logo2.png" alt="Recallsfeed">
+                    </div>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                     <p class="headerRight">powered by <strong>openFDA</strong></p>
                 </div>
             </div>
         </div>
     </div>
 
-	<div class="container">
-        <div class="row margin-top15">
-            <div class="col-xs-10">
-                <h1>Details for Product ID <%= request.getParameter("recallNumber") %></h1>
-            </div>
-            <div class="col-xs-2 shareContainer">
-                <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
-                <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
-                <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
-            </div>
-        </div><!--END ROW-->
-
-        <form>
-            <input type="hidden" name="recallNumber" id="recallNumber" value="<%= request.getParameter("recallNumber") %>"/>
-            <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementProductDetail"/>
-        </form>
+ <div class="container">
+            <div class="row margin-top15">
+                <div class="col-xs-10">
+	 <a href="FoodEnforcementServlet?event=Home">Home</a>
+	<h1>Enforcement Report</h1>
+	</div>
+   	<div class="col-xs-2 shareContainer">
+                    <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
+    </div>
+    </div><!--END ROW-->
+   
     
-   		<div class="row">
+   
+    <form>
+    <input type="hidden" name="recallNumber" id="recallNumber" value="<%= request.getParameter("recallNumber") %>"/>
+    <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementProductDetail"/>
+    </form>
+    
+   <div class="row">
             <div class="col-xs-12"><h2 class="margin-top10">Product Details</h2></div>
         </div>
-        <div class="row boxGray">
-            <div class="col-xs-12">
-                <dl class="dl-horizontal">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <dl>
                     <dt>Product Description</dt>
                     <dd id="1"></dd>
                     <dt>Recall Number</dt>
@@ -144,17 +141,16 @@
                     <dd id="6"></dd>
                 </dl>
             </div>
-            
+           
+            <div class="col-xs-12">
+                <div class="lineRule"></div>
+            </div>
         </div><!--END ROW-->
-        
-        <div class="col-xs-12">
-            <div class="lineRule"></div>
-        </div>
     
-     	<div class="row">
+     <div class="row">
             <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
         </div>
-        <div class="row boxGray">
+        <div class="row">
             <div class="col-sm-6 col-xs-12">
                 <dl>
                     <dt>Event Id</dt>
@@ -185,19 +181,29 @@
                     <dd id="17"></dd>
                 </dl>
             </div>
+            <div class="col-xs-12">
+                <div class="lineRule"></div>
+            </div>
+       
+	
+   <p class="textHelp">Note: If you need help accessing information in different file formats, see <a target="_blank" href="http://www.fda.gov/AboutFDA/AboutThisWebsite/WebsitePolicies/ViewingFiles/default.htm">Instructions for Downloading Viewers and Players</a>.</p>
+            </div>
+        </div><!--END ROW-->
+	
+   
 
-        </div>
-    </div><!--END ROW-->
 
-	<footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-4">
-                    <a href="http://www.fda.gov/"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <a href="http://www.fda.gov/"><img class="fda-logo" src="images/fda-logo.png" alt="FDA" /></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 </body>
 </html>

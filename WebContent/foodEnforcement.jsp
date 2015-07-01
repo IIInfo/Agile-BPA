@@ -13,19 +13,23 @@
 <title>RecallsFeed | powered by FDA</title>
 
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-<link href="css/dataTables.bootstrap.css" rel="stylesheet" />
 <link href="css/recalls.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/datepicker.css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600'
+	rel='stylesheet' type='text/css'>
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="assets/bootstrap-datepicker/css/datepicker.css" />
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript"
+	src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <!-- jQuery -->
 <!-- DataTables -->
@@ -180,7 +184,7 @@
 				alert("Search found no results");
 			}
 		});
-
+		
 		window.locaion.reload();
 
 	}
@@ -232,34 +236,19 @@
 		});
 	}
 
-	function downloadCSV() {
-
-		var date = new Date();
-		var dateFormatMMDDYYYY = ((date.getMonth() + 1) + '-' + date.getDate()
-				+ '-' + date.getFullYear());
-
-		var csvContent = "data:text/csv;charset=utf-8,";
-
-		csvContent += "PRODUCT DESCRIPTION" + " , " + "CLASSIFICATION" + " , "
-				+ "REASON FOR RECALL" + " , " + "RECALLING FIRM" + " , "
-				+ "DISTRIBUTION PATTERN" + " \n";
-
-		dataArray.forEach(function(infoArray, index) {
-			csvContent += infoArray[0].replace(/,/g, ":") + " , "
-					+ infoArray[1].replace(/,/g, ":") + " , "
-					+ infoArray[2].replace(/,/g, ":") + " , "
-					+ infoArray[3].replace(/,/g, ":") + " , "
-					+ infoArray[4].replace(/,/g, ":") + " \n ";
-		});
-
-		var encodedUri = encodeURI(csvContent);
-		var link = document.createElement("a");
-		link.setAttribute("href", encodedUri);
-		link.setAttribute("download", "enforcement" + dateFormatMMDDYYYY
-				+ ".csv");
-
-		link.click();
+	function downloadCsv(){
+		document.getElementById("event").value = "downloadCsv";
+		document.forms['formsubmit'].submit(); 
+		return false;
 	}
+	
+	function formatRecallInitationDate(recall_initiation_date){
+			var year = recall_initiation_date.substring(0, 4);
+			var month = recall_initiation_date.substring(4, 6);
+			var day = recall_initiation_date.substring(6, 8);
+   		 	var recallInitiationDate = month +"/"+ day +"/"+ year;
+   		 	return recallInitiationDate;
+		}
 
 	var dataArray;
 
@@ -284,7 +273,8 @@
 			detailArray.push(thisRow);
 
 			var recallNumber = thisRow.recall_number;
-
+			
+			rowArray.push(formatRecallInitationDate(thisRow.recall_initiation_date));
 			rowArray.push(thisRow.product_description);
 			rowArray.push(thisRow.classification);
 			rowArray.push(thisRow.reason_for_recall);
@@ -300,6 +290,10 @@
 		}
 
 		localStorage.setItem('resultObject', JSON.stringify(detailArray));
+		sessionStorage.setItem('session_foodEnforcement_results',
+										JSON.stringify(detailArray));
+	
+		document.getElementById("dataObject").value = JSON.stringify(detailArray);
 
 		// Generate the data table
 		var table = $('#tblResults')
@@ -307,6 +301,7 @@
 						{
 							data : dataArray,
 							stateSave : true,
+							//"sDom":"flrtip",
 							"lengthMenu" : [ [ 10, 25, 50, -1 ],
 									[ 10, 25, 50, "All" ] ],
 							"stateSaveCallback" : function(settings, data) {
@@ -323,25 +318,28 @@
 							}
 						});
 	}
+	
+
 </script>
 </head>
 <body>
 
 	<div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-9">
-                    <a href="index.html"><div class="header">
-                        <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
-                        <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
-                    </div></a>
-                </div>
-                <div class="col-xs-3">
-                    <p class="headerRight">powered by <strong>openFDA</strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8">
+					<div class="header">
+						<img class="logo" src="images/logo2.png" alt="Recallsfeed">
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<p class="headerRight">
+						powered by <strong>openFDA</strong>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container">
 		 <div class="row">
@@ -394,15 +392,18 @@
 
 		<div class="row =">
 			<div class="col-xs-12">
-				<h1>Enforcement Reports - Recall Information for Food</h1>
-				<p>Food and Drug Administration’s Recalls Database tracks and posts all food and beverage recalls. Search by product name, or check the recent recalls feed below.</p>
+				<h1>FDA Food Recalls</h1>
+				<p>Search and browse the latest food recalls. When an
+					FDA-regulated product is either defective or potentially harmful,
+					recalling that product (removing it from the market or correcting
+					the problem) is the most effective means for protecting the public.</p>
 			</div>
 		</div>
 		<!--END ROW-->
 
 
 		<div class="row margin-top15">
-			<form id="formsubmit" action="FoodEnforcementServlet" method="get">
+			<form id="formsubmit" name="formsubmit" action="FoodEnforcementServlet" method="post">
 				<input type="hidden" name="comingFrom" id="comingFrom"
 					value="foodEnforcement" /> <input type="hidden"
 					name="fromDateValue" id="fromDateValue"
@@ -413,6 +414,8 @@
 					value="<%=request.getParameter("reasonForRecall")%>" /> <input
 					type="hidden" name="classificationValue" id="classificationValue"
 					value="<%=request.getParameter("classification")%>" />
+				<input type="hidden" name="dataObject" id="dataObject" value=""/>
+				<input type="hidden" name="event" id="event" value=""/>
 
 
 				<div class="col-md-4 col-xs-12">
@@ -428,12 +431,15 @@
 					<div class="form-group">
 						<label for="datepicker">From Date</label>
 						<div class="input-group" id="fromDatePicker">
-							<input type="text" aria-describedby="demo1HelpText2" maxlength="10" class="form-control hasDatepicker" id="fromDate" name="fromDate">
-                            <span class="input-group-btn">
-                                <!---<button class="btn btn-default ui-datepicker-trigger" type="button" id="fromDate">
-                                    <span><span class="fa fa-calendar" style="font-family: 'FontAwesome' !important"><span class="sr-only">Calendar icon</span></span><span class="sr-only">Select date</span></span>
-                                </button>--->
-                            </span>
+							<input type="text" aria-describedby="demo1HelpText2"
+								maxlength="10" class="form-control hasDatepicker" id="fromDate"
+								name="fromDate"><span class="input-group-btn"><button
+									class="btn btn-default ui-datepicker-trigger" type="button">
+									<span><span class="fa fa-calendar"
+										style="font-family: 'FontAwesome' !important"><span
+											class="sr-only">Calendar icon</span></span><span class="sr-only">Select
+											date</span></span>
+								</button></span>
 						</div>
 						<!-- /input-group -->
 					</div>
@@ -443,14 +449,16 @@
 					<div class="form-group">
 						<label for="datepicker">To Date</label>
 						<div class="input-group" id="toDatePicker">
-							<input type="text" aria-describedby="demo1HelpText2" maxlength="10" class="form-control hasDatepicker" id="toDate" name="toDate">
-                            <span class="input-group-btn" id="toDatePickerGlyph">
-                            <span>
-                                <!---<button class="btn btn-default ui-datepicker-trigger" type="button">
-                                    <span class="fa fa-calendar" style="font-family: 'FontAwesome' !important">
-                                    <span class="sr-only">Calendar icon</span></span><span class="sr-only">Select date</span></span>
-                                </button>--->
-                            </span>
+							<input type="text" aria-describedby="demo1HelpText2"
+								maxlength="10" class="form-control hasDatepicker" id="toDate"
+								name="toDate"><span class="input-group-btn"
+								id="toDatePickerGlyph"><button
+									class="btn btn-default ui-datepicker-trigger" type="button">
+									<span><span class="fa fa-calendar"
+										style="font-family: 'FontAwesome' !important"><span
+											class="sr-only">Calendar icon</span></span><span class="sr-only">Select
+											date</span></span>
+								</button></span>
 						</div>
 						<!-- /input-group -->
 					</div>
@@ -467,7 +475,7 @@
 
 				<div class="col-md-2 col-xs-6">
 					<div class="form-group">
-						<label for="select">Classification</label> <select
+						<label for="select">Seriousness</label> <select
 							class="form-control" id="classification" name="classification">
 							<option>All</option>
 							<option>Class I</option>
@@ -510,9 +518,10 @@
 						}
 					%>
 				</div>
+				
 				<div class="col-xs-4 col-md-2">
-					<a id="enforcementReportDownloadCSV" target="_blank"
-						onclick="javascript:downloadCSV();"><i
+					<a id="enforcementReportDownloadCSV"
+						href="#" onclick="javascript:downloadCsv();"><i
 						class="fa fa-lg fa-download"></i> Download CSV</a>
 				</div>
 
@@ -525,6 +534,7 @@
 				<table summary="" class="product" id="tblResults">
 					<thead>
 						<tr>
+							<th scope="row">Recall Date</th>
 							<th scope="row">Product Description</th>
 							<th scope="row">Classification</th>
 							<th scope="row">Reason for Recall</th>
@@ -534,6 +544,12 @@
 						</tr>
 					</thead>
 				</table>
+				<p class="textHelp">
+					Note: If you need help accessing information in different file
+					formats, see <a target="_blank"
+						href="http://www.fda.gov/AboutFDA/AboutThisWebsite/WebsitePolicies/ViewingFiles/default.htm">Instructions
+						for Downloading Viewers and Players</a>.
+				</p>
 			</div>
 		</div>
 
@@ -541,14 +557,15 @@
 
 	</div>
 	<footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-4">
-                    <a href="http://www.fda.gov/"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+					<a href="http://www.fda.gov/"><img class="fda-logo"
+						src="images/fda-logo.png" alt="FDA" /></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </body>
 </html>
