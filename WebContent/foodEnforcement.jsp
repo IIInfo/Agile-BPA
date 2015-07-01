@@ -185,6 +185,14 @@
 		}).fail(function(data) {
 			$("body").css("cursor", "default");
 			if (data.statusText == "Not Found") {
+				$('#fromDatePicker input').datepicker();
+				$('#fromDatePickerGlyph').click(function () {
+		        	$('#fromDatePicker input').datepicker('show');
+		        });
+				$('#toDatePicker input').datepicker();
+				$('#toDatePickerGlyph').click(function () {
+		        	$('#toDatePicker input').datepicker('show');
+		        });
 				alert("No records found.");
 			}
 		});
@@ -235,7 +243,15 @@
 		}).fail(function(data) {
 			$("body").css("cursor", "default");
 			if (data.statusText == "Not Found") {
-				alert("Search found no results");
+				$('#fromDatePicker input').datepicker();
+				$('#fromDatePickerGlyph').click(function () {
+		        	$('#fromDatePicker input').datepicker('show');
+		        });
+				$('#toDatePicker input').datepicker();
+				$('#toDatePickerGlyph').click(function () {
+		        	$('#toDatePicker input').datepicker('show');
+		        });
+				alert("No records found.");
 			}
 		});
 	}
@@ -259,8 +275,14 @@
 	function processResult(data) {
 
 		$('#fromDatePicker input').datepicker();
+		$('#fromDatePickerGlyph').click(function () {
+        	$('#fromDatePicker input').datepicker('show');
+        });
 		$('#toDatePicker input').datepicker();
-
+		$('#toDatePickerGlyph').click(function () {
+        	$('#toDatePicker input').datepicker('show');
+        });
+        
 		var metaTotal = data.results.length;
 		dataArray = new Array();
 		var comingFrom = document.getElementById("comingFrom").value;
