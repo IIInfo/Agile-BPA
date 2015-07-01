@@ -22,6 +22,11 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600'
 	rel='stylesheet' type='text/css'>
+<script>
+	window["adrum-app-key"] = "AD-AAB-AAB-AUS";
+	window["adrum-start-time"] = new Date().getTime();
+</script>
+<script src="js/adrum.js"></script>
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>

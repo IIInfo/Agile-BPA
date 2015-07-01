@@ -21,7 +21,11 @@
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
-
+<script>
+	window["adrum-app-key"] = "AD-AAB-AAB-AUS";
+	window["adrum-start-time"] = new Date().getTime();
+</script>
+<script src="js/adrum.js"></script>
 <script>
 	
 	$(document).ready(function(){
