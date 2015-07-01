@@ -434,7 +434,7 @@
 						<div class="input-group" id="fromDatePicker">
 							<input type="text" aria-describedby="demo1HelpText2"
 								maxlength="10" class="form-control hasDatepicker" id="fromDate"
-								name="fromDate"><span class="input-group-btn"><button
+								name="fromDate"><span class="input-group-btn" id="fromDatePickerGlyph"><button
 									class="btn btn-default ui-datepicker-trigger" type="button">
 									<span><span class="fa fa-calendar "
 										style="font-family: 'FontAwesome' !important"><span
@@ -468,9 +468,16 @@
 				<script>
 					$(function() {
 						$('#fromDatePicker input').datepicker();
+						$('#fromDatePickerGlyph').click(function () {
+                        	$('#fromDatePicker input').datepicker('show');
+                        });
+						
 					}); //document ready
 					$(function() {
 						$('#toDatePicker input').datepicker();
+						$('#toDatePickerGlyph').click(function () {
+                        	$('#toDatePicker input').datepicker('show');
+                        });
 					}); //document ready
 				</script>
 
