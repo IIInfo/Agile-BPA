@@ -510,3 +510,8 @@
 .datepicker.dropdown-menu td {
   padding: 4px 5px;
 }
+
+.datepicker td, .datepicker th { 
+-webkit-border-radius: 0;
+border-radius: 0;
+}

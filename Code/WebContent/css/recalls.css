@@ -25,14 +25,12 @@ a { text-decoration: underline; }
 
 .footer {
     background-color: #d9510f;
-    height: 60px;
 	margin-top:40px;
     position: absolute;
     width: 100%;
     z-index:100;
-}
-.fda-logo {
-    margin-top:15px;
+	padding: 20px 0;
+	color:#fff;
 }
 .carousel {
     margin-top:25px;

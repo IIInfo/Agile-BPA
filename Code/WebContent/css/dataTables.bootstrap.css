@@ -88,17 +88,18 @@ table.dataTable thead .sorting_desc:after {
 	right: 8px;
 	display: block;
 	font-family: 'Glyphicons Halflings';
-	opacity: 0.5;
 }
 table.dataTable thead .sorting:after {
-	opacity: 0.2;
 	content: "\e150"; /* sort */
+	color: #808080;
 }
 table.dataTable thead .sorting_asc:after {
 	content: "\e155"; /* sort-by-attributes */
+	color: #0087c8;
 }
 table.dataTable thead .sorting_desc:after {
 	content: "\e156"; /* sort-by-attributes-alt */
+	color: #0087c8;
 }
 div.dataTables_scrollBody table.dataTable thead .sorting:after,
 div.dataTables_scrollBody table.dataTable thead .sorting_asc:after,
