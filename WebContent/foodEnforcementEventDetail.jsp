@@ -165,25 +165,27 @@ only screen and (max-width: 760px),
             </div>
         </div>
     </div>
+    
+    <form>
+        <input type="hidden" name="eventId" id="eventId" value="<%= request.getParameter("eventId") %>"/>
+        <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementEventDetail"/>
+    </form>
 
 	<div class="container">
-        <div class="row margin-top15">
-            <div class="col-xs-10">
-				<h1>Event Detail Report</h1>
-			</div>
-   			<div class="col-xs-2 shareContainer">
-                <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
-                <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
-                <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
-    		</div>
+  		<div class="row">  
+    		<ol class="breadcrumb">
+                <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
+                <li class="active">Event Detail Report</li>
+                <a href="#" class="pull-right"><i class="fa fa-envelope-o text-muted"></i></a>
+                <a href="#" class="pull-right"><i class="fa fa-twitter-square text-muted"></i></a>
+                <a href="#" class="pull-right"><i class="fa fa-facebook-square text-muted"></i></a>
+            </ol>
     	</div><!--END ROW-->
- 
-        <form>
-            <input type="hidden" name="eventId" id="eventId" value="<%= request.getParameter("eventId") %>"/>
-            <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementEventDetail"/>
-        </form>
     
 		<div class="row">
+			<div class="col-xs-12">
+				<h1>Event Detail Report</h1>
+			</div>
             <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
         </div>
         <div class="row boxGray">
@@ -237,10 +239,6 @@ only screen and (max-width: 760px),
             </div>
 
         </div><!--END ROW-->
-        
-        <div class="col-xs-12">
-            <div class="lineRule"></div>
-        </div>
         
      </div>
 

@@ -435,7 +435,7 @@ only screen and (max-width: 760px),
 		<!--END ROW-->
 
 
-		<div class="row margin-top15">
+		<div class="row margin-top15 searchContainer" id="foodEnforcementContID">
 			<form id="formsubmit" name="formsubmit" action="FoodEnforcementServlet" method="post">
 				<input type="hidden" name="comingFrom" id="comingFrom"
 					value="foodEnforcement" /> <input type="hidden"
@@ -515,8 +515,8 @@ only screen and (max-width: 760px),
 
 				<div class="col-md-2 col-xs-6">
 					<div class="form-group">
-						<label for="select">Seriousness</label> <select
-							class="form-control" id="classification" name="classification">
+						<label for="select">Seriousness</label> <a class="small" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign"></span></a>
+						 <select class="form-control" id="classification" name="classification">
 							<option>All</option>
 							<option>Class I</option>
 							<option>Class II</option>
@@ -529,10 +529,7 @@ only screen and (max-width: 760px),
 					<input class="btn btn-primary searchButton btn-block" type="submit"
 						value="Search">
 				</div>
-
-				<div class="col-xs-12">
-					<div class="lineRule"></div>
-				</div>
+				
 			</form>
 		</div>
 		<!--END ROW-->
