@@ -358,13 +358,13 @@ only screen and (max-width: 760px),
 	<div class="header">
         <div class="container">
             <div class="row banner">
-                <div class="col-xs-9">
+                <div class="col-xs-8">
                     <a href="index.html"><div class="header">
                         <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
                         <img class="logo" src="images/logo.svg" alt="Recallsfeed: Toss it or keep it?">
                     </div></a>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                     <p class="headerRight">powered by <strong>openFDA</strong> (prototype)</p>
                 </div>
             </div>
