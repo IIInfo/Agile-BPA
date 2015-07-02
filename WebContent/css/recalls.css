@@ -7,7 +7,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 h1 {
+	font-size:30px;
     font-weight:600;
+}
+h2 {
+	font-size:24px;
 }
 a { text-decoration: underline; }
 
@@ -214,4 +218,4 @@ only screen and (max-width: 760px),
 .boxGray { border:1px solid #e5e5e5; margin:0 2px 10px 2px; padding:10px 0; }
 .foodEnforcementContID { background:#f5f5f5; border:1px solid #ccc; border-radius:5px; margin:20px 0 40px 2px; padding:10px; }
 .breadcrumb { margin-top:10px; }
-.fa { font:normal normal normal 20px/1 FontAwesome; padding:0 3px; }
+.fa { font:normal normal normal 20px/1 FontAwesome !important; padding:0 3px; }
