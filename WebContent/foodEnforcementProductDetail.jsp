@@ -115,8 +115,7 @@
   		<div class="row">  
     		<ol class="breadcrumb">
                 <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
+                <li class="active">Product Detail Report</li>
                 <a href="#" class="pull-right"><i class="fa fa-envelope-o text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-twitter-square text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-facebook-square text-muted"></i></a>
