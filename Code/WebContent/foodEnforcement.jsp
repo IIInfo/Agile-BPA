@@ -365,7 +365,7 @@ only screen and (max-width: 760px),
                     </div></a>
                 </div>
                 <div class="col-xs-4">
-                    <p class="headerRight">powered by <strong>openFDA</strong> (<a href="#disclaimer">prototype</a>)</p>
+                    <p class="headerRight">powered by <strong>openFDA</strong> (<a class="disclaimer" href="#disclaimer">prototype</a>)</p>
                 </div>
             </div>
         </div>
