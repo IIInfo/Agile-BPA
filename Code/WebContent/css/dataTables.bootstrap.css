@@ -63,7 +63,7 @@ table.dataTable th {
 	box-sizing: content-box;
 
 }
-table.dataTable td { border:1px solid #e5e5e5; }
+table.dataTable { border:1px solid #e5e5e5; }
 
 table.dataTable {
 	clear: both;
