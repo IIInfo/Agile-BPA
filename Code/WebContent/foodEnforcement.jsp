@@ -607,7 +607,7 @@ only screen and (max-width: 760px),
                     <a href="https://open.fda.gov/" target="_blank"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
                 </div>
                 <div class="col-xs-12 col-sm-8">
-                	<p>This website was created as a prototype to display our capabilities to create intuitive and user friendly web application. This website is not official  FDA website.</p>
+                	<p>This website was created as a prototype to display our capabilities in creating an intuitive and user friendly web application. This is not an official FDA website.</p>
                 </div>
             </div>
         </div>
