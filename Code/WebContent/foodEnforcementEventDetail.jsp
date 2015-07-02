@@ -17,13 +17,13 @@
     
  <!--Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/sharewidget-4.0.js"></script>
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script>
 	window["adrum-app-key"] = "AD-AAB-AAB-AUS";
 	window["adrum-start-time"] = new Date().getTime();
@@ -177,7 +177,15 @@ only screen and (max-width: 760px),
     		<ol class="breadcrumb">
                 <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
                 <li class="active">Event Detail Report</li>
-                <a href="#" class="pull-right"><i class="fa fa-envelope-square text-muted"></i></a>
+                
+                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Seriousness" data-placement="top" data-content="Future implementation"><i class="fa fa-envelope-square text-muted"></i></a>
+                
+                
+                
+                
+                
+                
+                
                 <a href="#" class="pull-right"><i class="fa fa-twitter-square text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-facebook-square text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-rss-square text-muted"></i></a>
@@ -257,6 +265,12 @@ only screen and (max-width: 760px),
             </div>
         </div>
     </footer>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
 
 </body>
 </html>
