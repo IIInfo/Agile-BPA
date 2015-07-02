@@ -125,7 +125,7 @@
 		 		"lengthMenu" : [ [ 10, 25, 50, -1 ],
 									[ 10, 25, 50, "All" ] ],
 				"oLanguage" : {
-								"sSearch" : "Filter Dataset Below: ",
+								"sSearch" : "Keyword Search for Results Below: ",
 								"sEmptyTable" : "No results found."
 							}
 				

@@ -325,7 +325,7 @@
 										.getItem('foodEnforcement_results'));
 							},
 							"oLanguage" : {
-								"sSearch" : "Filter Dataset Below: "
+								"sSearch" : "Keyword Search for Results Below: "
 								
 							},
 							"order": [[ 0, "desc" ]],
