@@ -151,7 +151,7 @@ only screen and (max-width: 760px),
 <body>
 
 	<div class="header">
-        <div class="container">
+        <div class="row banner">
             <div class="row">
                 <div class="col-xs-9">
                     <a href="index.html"><div class="header">
@@ -177,9 +177,10 @@ only screen and (max-width: 760px),
     		<ol class="breadcrumb">
                 <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
                 <li class="active">Event Detail Report</li>
-                <a href="#" class="pull-right"><i class="fa fa-envelope-o text-muted"></i></a>
+                <a href="#" class="pull-right"><i class="fa fa-envelope-square text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-twitter-square text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-facebook-square text-muted"></i></a>
+                <a href="#" class="pull-right"><i class="fa fa-rss-square text-muted"></i></a>
             </ol>
             </div>
     	</div><!--END ROW-->
