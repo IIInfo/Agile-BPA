@@ -392,19 +392,19 @@ only screen and (max-width: 760px),
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="images/slide1.jpg" alt="...">
+                                <a href="#"><img src="images/slide1.jpg" alt="..."></a>
                                 <div class="carousel-caption">
                                     <p><strong>14 brands of bottled water</strong> recalled due to possible E. coli</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <img src="images/slide2.jpg" alt="...">
+                                <a href="#"><img src="images/slide2.jpg" alt="..."></a>
                                 <div class="carousel-caption">
                                     <p><strong>300 brands of caramel apples</strong> recalled&mdash;35 people ill</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <img src="images/slide3.jpg" alt="...">
+                                <a href="#"><img src="images/slide3.jpg" alt="..."></a>
                                 <div class="carousel-caption">
                                     <p><strong>Undeclared ingredient:</strong> peanuts found in cumin powder</p>
                                 </div>
