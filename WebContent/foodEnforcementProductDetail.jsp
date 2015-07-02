@@ -90,7 +90,7 @@
 </head>
 <body>
 
- <div class="header">
+	<div class="header">
         <div class="container">
             <div class="row">
                 <div class="col-xs-9">
@@ -106,30 +106,29 @@
         </div>
     </div>
 
- <div class="container">
-            <div class="row margin-top15">
-                <div class="col-xs-10">
-	 <a href="FoodEnforcementServlet?event=Home">Home</a>
-	<h1>Product Detail Report</h1>
-	</div>
-   	<div class="col-xs-2 shareContainer">
-                    <a href="#"><i class="fa fa-2x fa-facebook-square text-muted"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-twitter-square text-muted"></i></a>
-                    <a href="#"><i class="fa fa-2x fa-envelope-o text-muted"></i></a>
-    </div>
-    </div><!--END ROW-->
-   
-    
-   
-    <form>
-    <input type="hidden" name="recallNumber" id="recallNumber" value="<%= request.getParameter("recallNumber") %>"/>
-    <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementProductDetail"/>
+	<form>
+        <input type="hidden" name="recallNumber" id="recallNumber" value="<%= request.getParameter("recallNumber") %>" />
+        <input type="hidden" name="comingFrom" id="comingFrom" value="foodEnforcementProductDetail" />
     </form>
-    
-   <div class="row">
+
+	<div class="container">
+  		<div class="row">  
+    		<ol class="breadcrumb">
+                <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+                <a href="#" class="pull-right"><i class="fa fa-envelope-o text-muted"></i></a>
+                <a href="#" class="pull-right"><i class="fa fa-twitter-square text-muted"></i></a>
+                <a href="#" class="pull-right"><i class="fa fa-facebook-square text-muted"></i></a>
+            </ol>
+    	</div><!--END ROW-->
+
+        <div class="row">
+            <div class="col-xs-12"><h1>Product Detail Report</h1></div>
             <div class="col-xs-12"><h2 class="margin-top10">Product Details</h2></div>
         </div>
-        <div class="row boxGray">
+
+    	<div class="row boxGray">
             <div class="col-xs-12">
                 <dl class="dl-horizontal">
                     <dt>Product Description</dt>
@@ -146,11 +145,11 @@
                     <dd id="6"></dd>
                 </dl>
             </div>
-        </div><!--END ROW-->
+		</div><!--END ROW-->
     
-     <div class="row">
-            <div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
-        </div>
+	<div class="row">
+		<div class="col-xs-12"><h2 class="margin-top10">Event Details</h2></div>
+	</div>
         <div class="row boxGray">
             <div class="col-sm-6 col-xs-12">
                 <dl>
