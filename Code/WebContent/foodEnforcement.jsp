@@ -285,6 +285,7 @@
 			detailArray.push(thisRow);
 
 			var recallNumber = thisRow.recall_number;
+			var eventId = thisRow.event_id;
 			
 			rowArray.push(formatRecallDate(thisRow.report_date));
 			rowArray.push(thisRow.product_description);
@@ -292,8 +293,8 @@
 			rowArray.push(thisRow.reason_for_recall);
 			rowArray.push(thisRow.recalling_firm);
 			rowArray.push(thisRow.distribution_pattern);
-			var prodDetailLink = "&nbsp;&nbsp;&nbsp;<a href=\"FoodEnforcementServlet?recallNumber="
-					+ recallNumber
+			var prodDetailLink = "&nbsp;&nbsp;&nbsp;<a href=\"FoodEnforcementServlet?eventId="
+					+ eventId
 					+ "&comingFrom="
 					+ comingFrom
 					+ "\"><i class=\"fa fa-lg fa-external-link\"></i>&nbsp;Details</a>";

@@ -53,9 +53,13 @@ public class FoodEnforcementServlet extends HttpServlet {
 		String classification = request.getParameter("classification");
 		String recallNumber = request.getParameter("recallNumber");
 		String event = request.getParameter("event");
+		String eventId = request.getParameter("eventId");
 		
 		if(recallNumber != null && comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement")){
 			response.sendRedirect("foodEnforcementProductDetail.jsp?recallNumber="+recallNumber+"");
+		}
+		else if(eventId != null && comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement")){
+			response.sendRedirect("foodEnforcementEventDetail.jsp?eventId="+eventId+"");
 		}
 		else if(event != null && event.equalsIgnoreCase("Home")){
 			response.sendRedirect("foodEnforcement.jsp");
@@ -67,9 +71,9 @@ public class FoodEnforcementServlet extends HttpServlet {
 			response.sendRedirect("foodEnforcement.jsp?fromDate="+fromDate+"&toDate="+toDate+"&reasonForRecall="+reasonForRecall+"&classification="+classification+"");
 		}
 		else if(comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcementProductDetail")){
-			String eventId = request.getParameter("eventId");
 			response.sendRedirect("foodEnforcementEventDetail.jsp?eventId="+eventId+"");
 		}
+		
 	}
     
    
@@ -256,10 +260,13 @@ public class FoodEnforcementServlet extends HttpServlet {
 		String classification = request.getParameter("classification");
 		String recallNumber = request.getParameter("recallNumber");
 		String event = request.getParameter("event");
-	
+		String eventId = request.getParameter("eventId");
 		
 		if(recallNumber != null && comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement")){
 			response.sendRedirect("foodEnforcementProductDetail.jsp?recallNumber="+recallNumber+"");
+		}
+		else if(eventId != null && comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcement")){
+			response.sendRedirect("foodEnforcementEventDetail.jsp?eventId="+eventId+"");
 		}
 		else if(event != null && event.equalsIgnoreCase("Home")){
 			response.sendRedirect("foodEnforcement.jsp");
@@ -271,7 +278,6 @@ public class FoodEnforcementServlet extends HttpServlet {
 			response.sendRedirect("foodEnforcement.jsp?fromDate="+fromDate+"&toDate="+toDate+"&reasonForRecall="+reasonForRecall+"&classification="+classification+"");
 		}
 		else if(comingFrom!=null && comingFrom.equalsIgnoreCase("foodEnforcementProductDetail")){
-			String eventId = request.getParameter("eventId");
 			response.sendRedirect("foodEnforcementEventDetail.jsp?eventId="+eventId+"");
 		}
 	}
