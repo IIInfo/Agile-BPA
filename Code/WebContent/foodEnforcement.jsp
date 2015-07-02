@@ -345,7 +345,7 @@ only screen and (max-width: 760px),
 	*/
 	table.product td:nth-of-type(1):before { content: "Recall Date"; }
 	table.product td:nth-of-type(2):before { content: "Product Description"; }
-	table.product td:nth-of-type(3):before { content: "Classification"; }
+	table.product td:nth-of-type(3):before { content: "Seriousness"; }
 	table.product td:nth-of-type(4):before { content: "Reason for Recall"; }
 	table.product td:nth-of-type(5):before { content: "Recalling Firm"; }
 	table.product td:nth-of-type(6):before { content: "Distribution Pattern"; }

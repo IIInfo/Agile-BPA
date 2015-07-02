@@ -151,8 +151,8 @@ only screen and (max-width: 760px),
 <body>
 
 	<div class="header">
-        <div class="row banner">
-            <div class="row">
+        <div class="container">
+            <div class="row banner">
                 <div class="col-xs-9">
                     <a href="index.html"><div class="header">
                         <img class="logoimg" src="images/logo.png" alt="Recallsfeed logo">
