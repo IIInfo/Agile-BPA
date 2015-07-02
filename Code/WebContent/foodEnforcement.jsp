@@ -365,7 +365,7 @@ only screen and (max-width: 760px),
                     </div></a>
                 </div>
                 <div class="col-xs-4">
-                    <p class="headerRight">powered by <strong>openFDA</strong> (prototype)</p>
+                    <p class="headerRight">powered by <strong>openFDA</strong> (<a href="#disclaimer">prototype</a>)</p>
                 </div>
             </div>
         </div>
@@ -420,7 +420,7 @@ only screen and (max-width: 760px),
             </div>
 
 
-		<div class="row =">
+		<div class="row margin-top15">
 			<div class="col-xs-12">
 				<h1>Enforcement Reports - Recall Information for Food</h1>
 				<p>Food and Drug Administration's Recalls Database tracks and posts all food and beverage recalls. Search by any combination of Food name, Date Range and Seriousness or check the recent recalls feed below.</p>
@@ -607,7 +607,7 @@ only screen and (max-width: 760px),
                     <a href="https://open.fda.gov/" target="_blank"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
                 </div>
                 <div class="col-xs-12 col-sm-8">
-                	<p>This website was created as a prototype to display our capabilities in creating an intuitive and user friendly web application. This is not an official FDA website.</p>
+                	<a name="disclaimer"></a><p>This website was created as a prototype to display our capabilities in creating an intuitive and user friendly web application. This is not an official FDA website.</p>
                 </div>
             </div>
         </div>
