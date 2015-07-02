@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/style.css" />
 
-<script src="assets/libs/bootstrap/bootstrap.min.js"></script>
 <script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
 
 <style>
 /* Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically. */
@@ -39,6 +39,11 @@ only screen and (max-width: 760px),
 }
 </style>
 
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
 </head>
 <body>
 
@@ -50,7 +55,7 @@ only screen and (max-width: 760px),
 	<h1>Enforcement Reports - Recall Information for Food</h1>
   
 	<p>This is the openFDA API endpoint for all food product recalls monitored by the FDA. When an FDA-regulated product is either defective or potentially harmful, recalling that product - removing it from the market or correcting the problem - is the most effective means for protecting the public.</p>
-    <p>Recalls are almost always voluntary, meaning a company discovers a problem and recalls a product on its own. Other times a company recalls a product after FDA raises converns. Only in rare cases will FDA request or order a recall. But in every case, FDA's role is to oversee a company's strategy, classify the recalled products according to the level of hazard involved, and assess the adequacy of the recall. Recall information is posted in the Enforcement Reports once the products are classified.</p>
+    <p>Recalls are almost always voluntary, meaning a company discovers a problem and recalls a product on its own. Other times a company recalls a product after FDA raises converns. Only in rare cases will FDA request or order a recall. But in every case, FDA's role is to oversee a company's strategy, classify the recalled products according to the level of hazard involved, and assess the adequacy of the recall. Recall information is posted in the Enforcement Reports once the products are classified. <a class="small" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Seriousness Classification" data-content="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></p>
     
     <div class="page-filter">
     	<div class="page-filterKeywords">
@@ -146,5 +151,12 @@ only screen and (max-width: 760px),
 
 </div>
 		
+        
+        <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
 </body>
 </html>
