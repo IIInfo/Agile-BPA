@@ -509,7 +509,7 @@ only screen and (max-width: 760px),
 
 				<div class="col-md-2 col-xs-6">
 					<div class="form-group">
-						<label for="select">Seriousness</label> <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Seriousness" data-placement="top" data-content="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign"></span></a>
+						<label for="select">Seriousness</label> <a class="recallPopover" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Seriousness" data-placement="top" data-content="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign"></span></a>
 						 <select class="form-control" id="classification" name="classification">
 							<option>All</option>
 							<option>Class I</option>

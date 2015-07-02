@@ -221,3 +221,4 @@ only screen and (max-width: 760px),
 .breadcrumb { margin-top:25px; }
 .fa { font:normal normal normal 20px/1 FontAwesome !important; padding:0 3px; }
 .input-group-btn>.btn { height:34px; }
+.recallPopover a:Focus { width:600px; }
