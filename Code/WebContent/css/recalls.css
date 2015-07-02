@@ -136,7 +136,7 @@ dd {
     color: #31708f;
     border-radius: 4px;
     padding: 10px 15px 10px 15px;
-    margin-bottom:10px;
+    margin-bottom:30px;
     margin-top: 10px;
 }
 .textHelp {
@@ -218,6 +218,7 @@ only screen and (max-width: 760px),
 
 .dl-horizontal dt { white-space:normal; }
 .boxGray { border:1px solid #ccc; margin:0 2px 10px 2px; padding:10px 0; border-radius:5px; }
-.searchContainer { background:#f5f5f5; border:1px solid #ccc; border-radius:5px; margin:20px 0 40px 2px; padding:10px; }
+.searchContainer { background:#f5f5f5; border:1px solid #ccc; border-radius:5px; margin:20px 0 0 0; padding:10px 0 0 0; }
 .breadcrumb { margin-top:25px; }
 .fa { font:normal normal normal 20px/1 FontAwesome !important; padding:0 3px; }
+.input-group-btn>.btn { height:34px; }

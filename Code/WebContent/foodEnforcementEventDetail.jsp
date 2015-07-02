@@ -173,6 +173,7 @@ only screen and (max-width: 760px),
 
 	<div class="container">
   		<div class="row">  
+        	<div class="col-xs-12">
     		<ol class="breadcrumb">
                 <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
                 <li class="active">Event Detail Report</li>
@@ -180,6 +181,7 @@ only screen and (max-width: 760px),
                 <a href="#" class="pull-right"><i class="fa fa-twitter-square text-muted"></i></a>
                 <a href="#" class="pull-right"><i class="fa fa-facebook-square text-muted"></i></a>
             </ol>
+            </div>
     	</div><!--END ROW-->
     
 		<div class="row">

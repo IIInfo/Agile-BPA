@@ -371,7 +371,7 @@ only screen and (max-width: 760px),
                     </div></a>
                 </div>
                 <div class="col-xs-3">
-                    <p class="headerRight">powered by <strong>openFDA</strong></p>
+                    <p class="headerRight">powered by <strong>openFDA</strong> (prototype)</p>
                 </div>
             </div>
         </div>
@@ -392,19 +392,19 @@ only screen and (max-width: 760px),
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <a href="http://google.com"><img src="images/slide1.jpg" alt="..."></a>
+                                <a href="http://ec2-52-27-21-134.us-west-2.compute.amazonaws.com/agile-bpa/foodEnforcementEventDetail.jsp?eventId=71114"><img src="images/slide1.jpg" alt=""></a>
                                 <div class="carousel-caption">
-                                    <p><strong>14 brands of bottled water</strong> recalled due to possible E. coli</p>
+                                    <p><strong>Broccoli mix recalled</strong> due to Listeria risk</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <a href="#"><img src="images/slide2.jpg" alt="..."></a>
+                                <a href="http://ec2-52-27-21-134.us-west-2.compute.amazonaws.com/agile-bpa/foodEnforcementEventDetail.jsp?eventId=70124"><img src="images/slide2.jpg" alt=""></a>
                                 <div class="carousel-caption">
                                     <p><strong>300 brands of caramel apples</strong> recalled&mdash;35 people ill</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <a href="#"><img src="images/slide3.jpg" alt="..."></a>
+                                <a href="http://ec2-52-27-21-134.us-west-2.compute.amazonaws.com/agile-bpa/foodEnforcementEventDetail.jsp?eventId=70929"><img src="images/slide3.jpg" alt=""></a>
                                 <div class="carousel-caption">
                                     <p><strong>Undeclared ingredient:</strong> peanuts found in cumin powder</p>
                                 </div>
@@ -526,8 +526,7 @@ only screen and (max-width: 760px),
 				</div>
 
 				<div class="col-md-2 col-xs-6">
-					<input class="btn btn-primary searchButton btn-block" type="submit"
-						value="Search">
+					<input class="btn btn-primary searchButton btn-block" type="submit" value="Search">
 				</div>
 				
 			</form>
@@ -610,8 +609,11 @@ only screen and (max-width: 760px),
 	<footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-xs-4">
+                <div class="col-xs-12 col-sm-4">
                     <a href="#"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                	<p>This website was created as a prototype to display our capabilities to create intuitive and user friendly web application. This website is not official  FDA website.</p>
                 </div>
             </div>
         </div>
