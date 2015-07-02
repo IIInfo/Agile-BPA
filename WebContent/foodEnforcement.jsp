@@ -392,7 +392,7 @@ only screen and (max-width: 760px),
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <a href="#"><img src="images/slide1.jpg" alt="..."></a>
+                                <a href="http://google.com"><img src="images/slide1.jpg" alt="..."></a>
                                 <div class="carousel-caption">
                                     <p><strong>14 brands of bottled water</strong> recalled due to possible E. coli</p>
                                 </div>
