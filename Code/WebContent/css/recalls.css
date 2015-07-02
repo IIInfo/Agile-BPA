@@ -16,6 +16,7 @@ h2 {
 	font-size:24px;
 }
 a { text-decoration: underline; }
+a img { text-decoration: none; }
 
 .header {
     background-color: #d9510f;

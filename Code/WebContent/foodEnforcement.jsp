@@ -19,9 +19,8 @@
 <link href="css/dataTables.bootstrap.css" rel="stylesheet" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/sharewidget-4.0.css" />
-<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600'
-	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+
 <script>
 	window["adrum-app-key"] = "AD-AAB-AAB-AUS";
 	window["adrum-start-time"] = new Date().getTime();
@@ -30,20 +29,14 @@
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css"
-	href="assets/bootstrap-datepicker/css/datepicker.css" />
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript"
-	src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript"	src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <!-- jQuery -->
 <!-- DataTables -->
 <script type="text/javascript" src="js/jquery-dataTables.js"></script>
 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="css/dataTables.bootstrap.css"></script>
 
 
 <!--Carousel-->
@@ -326,7 +319,7 @@
 										.getItem('foodEnforcement_results'));
 							},
 							"oLanguage" : {
-								"sSearch" : "Keyword Search for Results Below: "
+								"sSearch" : "Filter search results with keyword(s): "
 								
 							},
 							"order": [[ 0, "desc" ]],
@@ -516,7 +509,7 @@ only screen and (max-width: 760px),
 
 				<div class="col-md-2 col-xs-6">
 					<div class="form-group">
-						<label for="select">Seriousness</label> <a class="small" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign"></span></a>
+						<label for="select">Seriousness</label> <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Classification" data-placement="top" data-content="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign"></span></a>
 						 <select class="form-control" id="classification" name="classification">
 							<option>All</option>
 							<option>Class I</option>
@@ -611,7 +604,7 @@ only screen and (max-width: 760px),
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-4">
-                    <a href="#"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+                    <a href="https://open.fda.gov/" target="_blank"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
                 </div>
                 <div class="col-xs-12 col-sm-8">
                 	<p>This website was created as a prototype to display our capabilities to create intuitive and user friendly web application. This website is not official  FDA website.</p>
@@ -619,5 +612,12 @@ only screen and (max-width: 760px),
             </div>
         </div>
     </footer>
+    
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+
 </body>
 </html>

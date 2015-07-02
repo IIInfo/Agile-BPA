@@ -16,10 +16,11 @@
 
     <!--Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
     <script src="js/jquery.js"></script>
     <script src="js/datepicker.js"></script>
     <script src="js/modernizr.custom.45980.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!--Carousel-->
     <script type="text/javascript">
@@ -63,7 +64,12 @@
         buttonClass: "fa fa-calendar"
     });
     </script>
-
+	
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
 
 
 </head>
@@ -136,7 +142,7 @@
             <div class="row =">
                 <div class="col-xs-12">
                     <h1>FDA Food Recalls</h1>
-                    <p>Search and browse the latest food recalls. When an FDA-regulated product is either defective or potentially harmful, recalling that product (removing it from the market or correcting the problem) is the most effective means for protecting the public.</p>
+                    <p>Search and browse the latest food recalls. When an FDA-regulated product is either defective or potentially harmful, recalling that product (removing it from the market or correcting the problem) is the most effective means for protecting the public. <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Classification" data-placement="top" data-content="Class I = Dangerous or defective products that predictably could cause serious health problems or death. Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws."><span class="glyphicon glyphicon-question-sign"></span></a></p>
                 </div>
             </div><!--END ROW-->
 
