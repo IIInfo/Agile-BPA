@@ -178,10 +178,10 @@ only screen and (max-width: 760px),
                 <li><a href="FoodEnforcementServlet?event=Home">Home</a></li>
                 <li class="active">Event Detail Report</li>
                 
-                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Future implementation"><i class="fa fa-envelope-square text-muted"></i></a>
-                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Future implementation"><i class="fa fa-twitter-square text-muted"></i></a>
-                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Future implementation"><i class="fa fa-facebook-square text-muted"></i></a>
-                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Future implementation"><i class="fa fa-rss-square text-muted"></i></a>
+                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Future implementation"><i class="fa fa-envelope-square text-muted"></i></a>
+                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Future implementation"><i class="fa fa-twitter-square text-muted"></i></a>
+                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Future implementation"><i class="fa fa-facebook-square text-muted"></i></a>
+                <a class="recallPopover pull-right" tabindex="0" role="button" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Future implementation"><i class="fa fa-rss-square text-muted"></i></a>
             </ol>
             </div>
     	</div><!--END ROW-->
