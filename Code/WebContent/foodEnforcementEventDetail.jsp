@@ -160,7 +160,7 @@ only screen and (max-width: 760px),
                     </div></a>
                 </div>
                 <div class="col-xs-3">
-                    <p class="headerRight">powered by <strong>openFDA</strong></p>
+                    <p class="headerRight">powered by <strong>openFDA</strong> (prototype)</p>
                 </div>
             </div>
         </div>
@@ -247,8 +247,11 @@ only screen and (max-width: 760px),
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-xs-4">
-                    <a href="#"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+                <div class="col-xs-12 col-sm-4">
+                    <a href="https://open.fda.gov/" target="_blank"><img class="fda-logo" src="images/openfda-logo.png" alt="openFDA" /></a>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                	<p>This website was created as a prototype to display our capabilities to create intuitive and user friendly web application. This website is not official  FDA website.</p>
                 </div>
             </div>
         </div>
