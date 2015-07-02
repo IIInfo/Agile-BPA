@@ -586,7 +586,7 @@ only screen and (max-width: 760px),
 						<tr>
 							<th scope="row">Recall Date</th>
 							<th scope="row">Product Description</th>
-							<th scope="row">Classification</th>
+							<th scope="row">Seriousness</th>
 							<th scope="row">Reason for Recall</th>
 							<th scope="row">Recalling Firm</th>
 							<th scope="row">Distribution Pattern</th>

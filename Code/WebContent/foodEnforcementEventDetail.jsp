@@ -240,7 +240,7 @@ only screen and (max-width: 760px),
 				<thead>
                 <tr>
                     <th scope="row">Product Description</th>
-                    <th scope="row">Classification</th>
+                    <th scope="row">Seriousness</th>
                     <th scope="row">Reason for Recall</th>
                     <th scope="row">Product Quantity</th>
                     <th scope="row">Recall Number</th>
