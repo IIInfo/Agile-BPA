@@ -25,7 +25,7 @@
 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-	window["adrum-app-key"] = "AD-AAB-AAB-AUS";
+	window["adrum-app-key"] = "AD-AAB-AAB-ATK";
 	window["adrum-start-time"] = new Date().getTime();
 </script>
 <script src="js/adrum.js"></script>
