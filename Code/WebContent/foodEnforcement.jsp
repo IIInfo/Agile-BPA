@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 
 <script>
-	window["adrum-app-key"] = "AD-AAB-AAB-AUS";
+	window["adrum-app-key"] = "AD-AAB-AAB-ATK";
 	window["adrum-start-time"] = new Date().getTime();
 </script>
 <script src="js/adrum.js"></script>
