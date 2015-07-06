@@ -88,7 +88,7 @@
 	</target>
 	
      <!-- Create a .war file for agile-bpa web component -->
-	<target name="agile-bpa.war" depends="agile-bpa-web.compile" description="-->Creates the WAR file for agile-bpa web component">
+	<target name="agile-bpa.war" depends="agile-bpa-web.compile, unitTest" description="-->Creates the WAR file for agile-bpa web component">
 		<war destfile="${agile-bpa.war.dir}/agile-bpa.war" webxml="${agile-bpa-web-inf.dir}/web.xml" >
 			<fileset dir="${agile-bpa-web-context}">
 				<include name="assets/js/*.*" />
@@ -123,5 +123,25 @@
 		<delete dir="${agile-bpa-web.build.dir}/jsps" />
 		<delete dir="${agile-bpa.war.dir}/war" />
 		<delete dir="${agile-bpa.war.dir}/WEB-INF" />
+	</target>
+	
+	<target name="unitTest">
+		<javac srcdir="${agile-bpa.web.src.dir}" destdir="${agile-bpa-web.build.dir}" debug="true">
+			<classpath refid="agile-bpa.web.compile.classpath" />
+		</javac>
+		
+		<junit printsummary="yes" haltonfailure="yes">
+		 <classpath refid="agile-bpa.web.compile.classpath" />
+		 <classpath>
+			<pathelement path="${agile-bpa-web.build.dir}"/>
+		  </classpath>
+		
+		  <formatter type="plain"/>
+
+		  <test name="com.iiinfo.servlet.TestFoodEnforcement" haltonfailure="no" outfile="result">
+			<formatter type="xml"/>
+		  </test>
+		  
+		</junit>
 	</target>
 </project>
