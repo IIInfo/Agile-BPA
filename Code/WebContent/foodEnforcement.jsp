@@ -423,7 +423,7 @@ only screen and (max-width: 760px),
 		<div class="row margin-top15">
 			<div class="col-xs-12">
 				<h1>Enforcement Reports - Recall Information for Food</h1>
-				<p>Food and Drug Administration's Recalls Database tracks and posts all food and beverage recalls. Search by any combination of Food name, Date Range and Seriousness or check the recent recalls feed below.</p>
+				<p>RecallsFeed is a prototype developed using openFDA APIs, it uses the food recall datasets to show how agile iterative development can affectively work for digital solutions. Using this RecallsFeed prototype you can search by any combination of Food Name, Date Range and Seriousness or check the recent food recalls listing.</p>
 			</div>
 		</div>
 		<!--END ROW-->
