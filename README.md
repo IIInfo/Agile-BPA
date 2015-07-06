@@ -1,5 +1,5 @@
 
-[[RECALLSFEED Prototype URL]]:(http://www.google.com)
+[[RECALLSFEED Prototype URL]](http://www.google.com)
 #Agile Project Management
 Our approach for creating the prototype began by identifying and designating a product manager who would be accountable for the vision, development, and product quality, while meeting the BPA’s acceptance criteria. This person has a product management background with the technical experience to assess alternatives and tradeoffs. He also had the sole authority to assign tasks and make decisions about features and technical implementation. [[EVIDENCE]] (https://github.com/IIInfo/Agile-BPA/blob/master/Docs/Program%20Management/Evidence_Product_Owner_with_Product_and_Team_Responsiblity.PNG)
 
@@ -30,9 +30,9 @@ The prototype design began with a wireframe which was collaboratively designed u
 We performed usability testing on the HTML prototype with three testers. One tester tried to obtain details about a recall by clicking on an image in the slideshow at the top of the page. The slides did not have hyperlinks and the tester was surprised when nothing happened. We added links to the slides in the carousel after viewing this test. Another tester did not use the search filters when asked to find only foods recalled for undeclared peanuts, nor did she use the filters when asked to find foods that had only been recalled in the past week. The design team added more contrast to the search filter row to the next iteration. 
 
 [[Evidence For Wireframes]]  (https://github.com/IIInfo/Agile-BPA/tree/master/design/wireframes)
-  [[Evidence For Usability Test]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/Usability%20tests/test1-paper%20prototype%20testing)
+  [[Evidence For Usability Test1]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/Usability%20tests/test1-paper%20prototype%20testing)
   [[Evidence For Usability_Test2]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/Usability%20tests/test2-web%20prototype%20testing)
-  [[Evidence Videos From Usability Tests]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/Usability%20tests)
+  [[Evidence Videos From Usability Tests]] (https://github.com/IIInfo/Agile-BPA/blob/master/Docs/Usability/Usability%20tests/videos_usability_testing.txt)
 
 #Development Approach
 Our technology decisions were based on using software frameworks that are commonly used for creating similar services and that can be deployed on a wide variety of commodity hardware. We used test driven development (TDD), creating unit and integration tests to verify modules and components. Normally we use Apache Selenium to create automate tests for all user-facing functionality, but we performed manual testing for the prototype
