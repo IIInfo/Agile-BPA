@@ -15,13 +15,14 @@ Sprint 1 started with a short sprint planning meeting prior to implementing spri
 To implement the prototype, we identified three users to play the role of typical users throughout the prototype’s life-cycle. We used an iterative human-centered design process that included: participatory design, a focus group, personas, scenarios, use cases, and usability testing. The prototype design evolved as we gained feedback from usability tests.
 
 `Personas` -
-We developed three personas to represent potential users of our product. [[More details]] (https://github.com/IIInfo/Agile-BPA/tree/master/design/usability/personas)
+We developed three personas to represent potential users of our product. [[More details]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/personas)
+
 
 `Scenarios` -
-We crafted scenarios that our personas are likely to encounter. We presented these scenarios to a focus group to generate ideas for the prototype. We also presented these scenarios to our usability testers during usability testing and we incorporated the scenarios into our use cases. [[More details]] (https://github.com/IIInfo/Agile-BPA/tree/master/design/usability/focus%20group)
+We crafted scenarios that our personas are likely to encounter. We presented these scenarios to a focus group to generate ideas for the prototype. We also presented these scenarios to our usability testers during usability testing and we incorporated the scenarios into our use cases. [[More details]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/focus%20group)
 
 `Use Cases` -
-We created use cases for each scenario to identify user behavior in the application flow and to see if impediments will prevent the user from obtaining desired results. [[More details]] (https://github.com/IIInfo/Agile-BPA/tree/master/design/usability/use%20cases)
+We created use cases for each scenario to identify user behavior in the application flow and to see if impediments will prevent the user from obtaining desired results. [[More details]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/use%20cases)
 
 Usability Testing
 
@@ -32,7 +33,7 @@ We performed usability testing on the HTML prototype with three testers. One tes
 [[Evidence For Wireframes]]  (https://github.com/IIInfo/Agile-BPA/tree/master/design/wireframes)
   [[Evidence For Usability Test1]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/Usability%20tests/test1-paper%20prototype%20testing)
   [[Evidence For Usability_Test2]] (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/Usability/Usability%20tests/test2-web%20prototype%20testing)
-  [[Evidence Videos From Usability Tests]] (https://github.com/IIInfo/Agile-BPA/blob/master/Docs/Usability/Usability%20tests/videos_usability_testing.txt)
+  [[Evidence Videos From Usability Tests]] (https://github.com/IIInfo/Agile-BPA/blob/master/Docs/Usability/Usability%20tests/videos_usability_testing.md)
 
 #Development Approach
 Our technology decisions were based on using software frameworks that are commonly used for creating similar services and that can be deployed on a wide variety of commodity hardware. We used test driven development (TDD), creating unit and integration tests to verify modules and components. Normally we use Apache Selenium to create automate tests for all user-facing functionality, but we performed manual testing for the prototype
