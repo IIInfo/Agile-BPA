@@ -1,0 +1,24 @@
+{
+  "name": "agile-bpa",
+  "description": "The responsive Agile-BPA prototype web application.",
+  "version": "1.0.0",
+  "keywords": [
+    "agile-bpa",
+    "web"
+  ],
+  "homepage": "http://ec2-52-27-21-134.us-west-2.compute.amazonaws.com/agile-bpa/",
+  "author": "Information Innovators, Inc.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IIInfo/Agile-BPA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IIInfo/Agile-BPA/issues"
+  },
+  "license": "Apache",
+  "files": [
+    "Code/deploy/agile-bpa.war",
+    "README.md",
+    "Readme_moreinfo.md"
+  ]
+}
