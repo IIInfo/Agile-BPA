@@ -1,9 +1,13 @@
 Instructions to install and run on another machine 
 
 Docker Image
+
 •	Pre-requiste: Docker is installed and running
+
 •	Pull  Docker repository  using “docker pull ppandyaiiinfo/agile-bpa”
+
 •	Run Docker using “docker run -it -d -p 80:8080 ppandyaiiinfo/agile-bpa:latest”
+
 •	Open any browser and go to URL: http://machine-name/agile-bpa  to run prototype
 
 
