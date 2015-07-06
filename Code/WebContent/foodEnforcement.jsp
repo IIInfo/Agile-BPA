@@ -431,6 +431,7 @@ only screen and (max-width: 760px),
 
 		<div class="row margin-top15 searchContainer" id="foodEnforcementContID">
 			<form id="formsubmit" name="formsubmit" action="FoodEnforcementServlet" method="post">
+            	<legend>Search reports using any of the following fields</legend>
 				<input type="hidden" name="comingFrom" id="comingFrom"
 					value="foodEnforcement" /> <input type="hidden"
 					name="fromDateValue" id="fromDateValue"
