@@ -1,5 +1,5 @@
 
-[[RECALLSFEED Prototype URL]](http://www.google.com)
+[[URL Prototype - RECALLSFEED]](http://ec2-52-27-128-182.us-west-2.compute.amazonaws.com/agile-bpa/)
 #Agile Project Management
 Our approach for creating the prototype began by identifying and designating a product manager who would be accountable for the vision, development, and product quality, while meeting the BPA’s acceptance criteria. This person has a product management background with the technical experience to assess alternatives and tradeoffs. He also had the sole authority to assign tasks and make decisions about features and technical implementation. [[EVIDENCE]] (https://github.com/IIInfo/Agile-BPA/blob/master/Docs/Program%20Management/Evidence_Product_Owner_with_Product_and_Team_Responsiblity.PNG)
 
