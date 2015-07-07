@@ -1,7 +1,7 @@
 RECALLSFEED
 ===========
 
-[![URL to Prototype](http://ec2-52-27-128-182.us-west-2.compute.amazonaws.com/agile-bpa)
+[URL to Prototype](http://ec2-52-27-128-182.us-west-2.compute.amazonaws.com/agile-bpa)
 
 RRecallsFeed is a prototype developed using openFDA APIs, it uses the food recall datasets to show how agile iterative development can affectively work for digital solutions. Using this RecallsFeed prototype you can search by any combination of Food Name, Date Range and Seriousness or check the recent food recalls listing
 
