@@ -44,7 +44,7 @@ WAR file
 
 ## License
 
-[BSD license](http://opensource.org/licenses/bsd-license.php)
+None
 
 ## Copyright
 
