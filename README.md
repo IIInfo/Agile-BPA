@@ -80,8 +80,8 @@ Docker Image
  * Open any browser and go to URL: `http://machine-name/agile-bpa`  to run prototype
 
 WAR file
- * Download the latest release from `https://github.com/IIInfo/Agile-BPA/releases/download/v1.0.0/agile-bpa-1.0.0-dist.zip`
- * Unzip `agile-BPA-v1.0-dis.zip`
+ * Download the latest release from `https://github.com/IIInfo/Agile-BPA/releases/download/v2.0.0/agile-bpa-2.0.0-dist.zip`
+ * Unzip `agile-BPA-v2.0.0-dis.zip`
  * Install the `agile-BPA.war` into your J2EE Container on your machine (server)
  * Open any browser and go to URL: `http://machine-name/agile-BPA` to run the prototype.
 
