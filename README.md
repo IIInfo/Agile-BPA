@@ -96,7 +96,3 @@ For security monitoring we made use of the previously mentioned services plus AW
 [[EVIDENCE]]
 (https://github.com/IIInfo/Agile-BPA/tree/master/Docs/DevOps/continuous_monitoring/)
 
-
-*Please note that openFDA is a beta  project and not for clinical use. While the FDA makes every effort to ensure that data and logic are accurate, you should assume all results are unvalidated.*
-
-
